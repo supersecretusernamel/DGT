@@ -110,7 +110,31 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);font-
 .psign-trap{font-size:.71rem;background:#FFF8E1;border-radius:4px;padding:2px 7px;color:#7A5010;margin-top:4px;display:inline-block}
 .coming{border:2px dashed var(--bd2);border-radius:var(--rl);padding:2.5rem;text-align:center;color:var(--tx3);font-style:italic}
 .coming strong{display:block;font-size:1rem;color:var(--tx2);margin-bottom:.3rem;font-style:normal}
-@media(max-width:620px){.g2,.g3,.lic-grid{grid-template-columns:1fr}.vrow{grid-template-columns:1fr}.vcat{border-right:none;border-bottom:1px solid var(--bd)}.sign-grid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}}
+/* ── Mobile nav: scrollable pill row ── */
+.topnav-inner{flex-wrap:nowrap}
+.ttabs{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-wrap:nowrap;padding-bottom:2px}
+.ttabs::-webkit-scrollbar{display:none}
+.ttab{flex-shrink:0}
+/* ── Mobile breakpoint ── */
+@media(max-width:680px){
+  .topnav-inner{flex-direction:column;align-items:flex-start;gap:.4rem;padding:.5rem .8rem}
+  .ttabs{width:100%;gap:.22rem}
+  .ttab{font-size:.68rem;padding:.22rem .6rem}
+  .page{padding:1rem .75rem 5rem}
+  .g2,.g3,.lic-grid,.tl-grid,.beacon-grid,.vocab-grid{grid-template-columns:1fr}
+  .vrow{grid-template-columns:1fr}.vcat{border-right:none;border-bottom:1px solid var(--bd)}
+  .sign-grid{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}
+  .tema-title{font-size:1.2rem}
+  .spd-tbl{font-size:.65rem}
+  .tbl{font-size:.76rem}
+  .tbl th,.tbl td{padding:.42rem .6rem}
+  .co{font-size:.82rem}
+  .trap{font-size:.8rem}
+  .card{padding:.75rem .85rem}
+  table.priority-tbl{font-size:.74rem}
+  .psign-row{flex-direction:column;gap:.4rem}
+  .psign-icon{width:auto}
+}
 </style>
 </head>
 <body>
@@ -127,6 +151,15 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);font-
       <button class="ttab" onclick="showTema(7)">T7 · Vías públicas</button>
       <button class="ttab" onclick="showTema(8)">T8 · Velocidad</button>
       <button class="ttab" onclick="showTema(9)">T9 · Maniobras I</button>
+      <button class="ttab" onclick="showTema(10)">T10 · Maniobras II</button>
+      <button class="ttab" onclick="showTema(11)">T11 · Parada y estacionamiento</button>
+      <button class="ttab" onclick="showTema(12)">T12 · Prioridad de paso</button>
+      <button class="ttab" onclick="showTema(13)">T13 · Transporte y carga</button>
+      <button class="ttab" onclick="showTema(14)">T14 · Seguridad activa</button>
+      <button class="ttab" onclick="showTema(15)">T15 · Mecánica y eficiencia</button>
+      <button class="ttab" onclick="showTema(16)">T16 · Factor humano</button>
+      <button class="ttab" onclick="showTema(17)">T17 · Conducción preventiva y PAS</button>
+      <button class="ttab locked">T18</button>
     </div>
   </div>
 </nav>
@@ -2890,7 +2923,1393 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);font-
 </div>
 <!-- ═══════════════ END TEMA 9 ═══════════════ -->
 
+<!-- ═══════════════ TEMA 10 ═══════════════ -->
+<div class="tema-panel" id="tema10">
+  <div class="tema-hdr">
+    <span class="tema-num">TEMA 10</span>
+    <div>
+      <div class="tema-title">Maniobras II: cambio de dirección, sentido y marcha atrás</div>
+      <div class="tema-en">Manoeuvres II: turning, U-turns and reversing</div>
+    </div>
+  </div>
+  <div class="intro-box">
+    <strong>¿Qué se examina aquí?</strong> Examiners target <strong>exact positioning rules</strong> (which edge to hug), the long list of <strong>places where U-turns are banned</strong>, the <strong>15 m reverse limit</strong>, and when reversing is allowed to enter crossings. Know every prohibition precisely.
+  </div>
+  <div class="section">
+    <div class="sec-title">1. Cambio de dirección — normas generales <span class="sec-en">· Turning — general rules</span></div>
+    <div class="co co-bl"><strong>Advertir previamente</strong> con el intermitente correspondiente y con suficiente antelación a los vehículos que circulen detrás.<span class="en">Signal in advance with the appropriate indicator before any direction change.</span></div>
+    <div class="card" style="margin-top:.6rem">
+      <table class="tbl">
+        <thead><tr><th>Situación · Situation</th><th>Posición obligatoria · Required position</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Giro a la derecha</strong> <span class="tbl-note">Turning right</span></td><td>Ceñirse <span class="hl">todo lo posible al borde derecho</span> de la calzada. No invadir el carril del sentido contrario.<span class="tbl-note">Hug the right edge as closely as possible.</span></td></tr>
+          <tr><td><strong>Giro a la izquierda — sentido único</strong> <span class="tbl-note">Left turn on one-way road</span></td><td>Ceñirse <span class="hl">todo lo posible al borde izquierdo</span>.<span class="tbl-note">Hug the left edge — not doing so risks a collision.</span></td></tr>
+          <tr><td><strong>Giro a la izquierda — doble sentido</strong> <span class="tbl-note">Left turn on two-way road</span></td><td>Situarse junto a la <span class="hl">marca longitudinal de separación</span> (o en el eje si no existe). No invadir la zona del sentido contrario.<span class="tbl-note">Move to the centre line (axis). Never cross into the oncoming zone.</span></td></tr>
+          <tr><td><strong>Giro izquierda — doble sentido, 3 carriles</strong> <span class="tbl-note">Left turn, two-way, 3 lanes</span></td><td>Situarse en el <span class="hl">carril central</span>.<span class="tbl-note">Use the middle lane.</span></td></tr>
+          <tr><td><strong>Vía acondicionada / señalizada</strong> <span class="tbl-note">Road with dedicated turn lanes</span></td><td>Seguir el acondicionamiento y señalización. De no hacerlo, el cambio de dirección está <span class="hl-re">prohibido</span>.<span class="tbl-note">Must follow the markings/signals exactly — otherwise the turn is prohibited.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="co co-am">Ciclistas, bicicletas y ciclomotores que giren a la izquierda deben usar el carril especial para girar a la izquierda, igual que el resto de vehículos.<span class="en">Cyclists and moped riders must also use dedicated left-turn lanes when provided.</span></div>
+    <div class="co co-gy">Si las dimensiones del vehículo u otras circunstancias impiden seguir estas normas estrictamente, el conductor debe adoptar las precauciones necesarias para evitar todo peligro.<span class="en">Oversized or special vehicles: take extra precautions when strict compliance isn't possible.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">2. Cambio de sentido <span class="sec-en">· U-turns (180° reversal)</span></div>
+    <div class="co co-bl">Dar media vuelta (giro de 180°) para seguir en sentido inverso permaneciendo en la misma calzada o vía.<span class="en">A U-turn is a 180° turn to travel in the opposite direction on the same road.</span></div>
+    <div class="card">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.5rem">Obligaciones antes de cambiar de sentido · Before a U-turn:</div>
+      <div class="pchain">
+        <div class="prow"><div class="pnum" style="background:var(--ac2);color:var(--ac)">1</div><div class="pcon"><div class="pname">Elegir lugar adecuado</div><div class="pname-en">Choose a suitable spot</div><div class="pdesc">Interceptar la vía en el <strong>menor tiempo posible</strong>. / Cross the road as quickly as possible.</div></div></div>
+        <div class="prow"><div class="pnum" style="background:var(--ac2);color:var(--ac)">2</div><div class="pcon"><div class="pname">No poner en peligro ni obstaculizar</div><div class="pname-en">Don't endanger or obstruct others</div><div class="pdesc">Asegurarse de que no hay peligro para otros usuarios.</div></div></div>
+        <div class="prow"><div class="pnum" style="background:var(--ac2);color:var(--ac)">3</div><div class="pcon"><div class="pname">Advertir con el intermitente</div><div class="pname-en">Signal with the indicator</div><div class="pdesc">Señalizar la maniobra con el intermitente correspondiente.</div></div></div>
+        <div class="prow"><div class="pnum" style="background:var(--ac2);color:var(--ac)">4</div><div class="pcon"><div class="pname">Sin utilizar la marcha atrás</div><div class="pname-en">Do NOT use reverse gear</div><div class="pdesc">La maniobra debe realizarse correctamente, sin marcha atrás (salvo imposibilidad). / U-turn must be executed without reversing unless unavoidable.</div></div></div>
+      </div>
+    </div>
+    <div class="co co-am">Si esperar impide la marcha de los vehículos de detrás: salir por el lado derecho (si posible) hasta poder realizar la maniobra.<span class="en">If waiting blocks traffic behind: pull right and wait for a gap.</span></div>
+    <div class="co co-bl">En plazas, glorietas o similares: cambiar de sentido dejando a la <strong>izquierda el centro</strong>.<span class="en">At roundabouts/squares: U-turn keeping the centre to your left.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">3. Lugares donde está prohibido el cambio de sentido <span class="sec-en">· Where U-turns are banned</span></div>
+    <div class="trap">
+      <div class="trap-lbl">⚠ MEMORIZA — lista completa · Full list</div>
+      <table class="tbl" style="margin-top:.4rem">
+        <thead><tr><th>Prohibición · Prohibition</th><th>Nota · Note</th></tr></thead>
+        <tbody>
+          <tr><td>Donde no haya <strong>suficiente visibilidad</strong> (cualquier causa)</td><td>Insufficient visibility (any reason)</td></tr>
+          <tr><td>Cuando se dificulte la circulación o se ponga en peligro a otros</td><td>Obstructs traffic or endangers others</td></tr>
+          <tr><td><strong>Pasos a nivel</strong></td><td>Level crossings — but proximidades are OK</td></tr>
+          <tr><td><strong>Túneles, pasos inferiores</strong> y tramos afectados por señal Túnel</td><td>Tunnels and underpasses</td></tr>
+          <tr><td><strong>Autopistas y autovías</strong> (salvo lugares habilitados)</td><td>Motorways — except designated areas</td></tr>
+          <tr><td>Cualquier vía pública <strong>usando la marcha atrás</strong> (salvo imposibilidad de seguir de frente)</td><td>Reversing to do a U-turn is prohibited unless unavoidable</td></tr>
+          <tr><td>Desde el <strong>carril central</strong> de calzada con tres carriles para ambos sentidos</td><td>Centre lane of 3-lane two-way road</td></tr>
+          <tr><td><strong>Calzadas de sentido único</strong></td><td>One-way roads</td></tr>
+          <tr><td>Donde lo prohíba una <strong>señal</strong></td><td>Wherever a sign prohibits it</td></tr>
+          <tr><td>Donde esté prohibido el <strong>adelantamiento</strong> (salvo autorización expresa)</td><td>No-overtaking zones (unless U-turn is expressly authorised)</td></tr>
+          <tr><td>Curvas y cambios de rasante de <strong>reducida visibilidad</strong></td><td>Bends and hilltops with limited visibility</td></tr>
+          <tr><td><strong>Pasos para peatones</strong> y sus proximidades</td><td>Pedestrian crossings and nearby</td></tr>
+          <tr><td>Intersecciones sin prioridad señalizada</td><td>Unsigned intersections</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">4. Circulación marcha atrás <span class="sec-en">· Reversing</span></div>
+    <div class="co co-re"><strong>Norma general: prohibido circular hacia atrás</strong>, excepto cuando no sea posible circular hacia delante ni cambiar de dirección o sentido.<span class="en">General rule: reversing is prohibited unless forward movement and turning are impossible.</span></div>
+    <div class="card">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Excepción — maniobra complementaria · Permitted supplementary reverse</div>
+      <div class="co co-te">Como complemento de parada, estacionamiento o incorporación a la circulación, se permite marcha atrás si:<span class="en">As supplement to stopping, parking or joining traffic, allowed if:</span></div>
+      <div class="co co-bl">• No se recorran más de <span class="hl">15 metros</span>.<span class="en">· Not more than 15 metres.</span></div>
+      <div class="co co-bl">• No se invada un <span class="hl">cruce de vías</span> (excepto calle sin salida).<span class="en">· No crossing an intersection (except dead-end street).</span></div>
+    </div>
+    <div class="card" style="margin-top:.5rem">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Procedimiento correcto · Correct procedure</div>
+      <div class="co co-gy">Comprobar mirando hacia atrás, por los retrovisores o apeándose, que no hay peligro.<span class="en">Check directly, via mirrors or by stepping out: no danger behind.</span></div>
+      <div class="co co-gy">Advertir a otros con la <strong>luz de marcha atrás</strong> y/o <strong>brazo extendido horizontalmente con la palma hacia atrás</strong>.<span class="en">Warn others with reverse light and/or arm signal: arm horizontal, palm facing back.</span></div>
+      <div class="co co-gy">Realizar con <strong>máxima precaución</strong>, en el menor espacio y tiempo posible.<span class="en">Execute with maximum care, minimum distance and time.</span></div>
+    </div>
+    <div class="trap">
+      <div class="trap-lbl">⚠ Caso especial: calle sin salida · Dead-end street</div>
+      <p>En una calle sin salida donde no se puede cambiar de dirección ni de sentido, se puede salir en marcha atrás <span class="hl">los metros necesarios</span>, incluso invadiendo un <span class="hl">cruce de vías</span>.<span class="en">In a dead-end where turning is impossible, may reverse as far as needed — even through an intersection.</span></p>
+    </div>
+    <div class="co co-re">En <strong>autopistas y autovías</strong>: queda <strong>terminantemente prohibido</strong> circular marcha atrás.<span class="en">On motorways: reversing is absolutely prohibited.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Vocabulario clave <span class="sec-en">· Key vocabulary</span></div>
+    <div class="vocab-grid">
+      <div class="vocab-item"><div class="vocab-es">cambio de dirección</div><div class="vocab-en">change of direction / turning</div></div>
+      <div class="vocab-item"><div class="vocab-es">cambio de sentido</div><div class="vocab-en">U-turn / reversal of direction</div></div>
+      <div class="vocab-item"><div class="vocab-es">marcha atrás</div><div class="vocab-en">reverse gear / reversing</div></div>
+      <div class="vocab-item"><div class="vocab-es">calzada de sentido único</div><div class="vocab-en">one-way road</div></div>
+      <div class="vocab-item"><div class="vocab-es">calzada de doble sentido</div><div class="vocab-en">two-way road</div></div>
+      <div class="vocab-item"><div class="vocab-es">borde derecho / izquierdo</div><div class="vocab-en">right / left edge of road</div></div>
+      <div class="vocab-item"><div class="vocab-es">carril central</div><div class="vocab-en">centre lane</div></div>
+      <div class="vocab-item"><div class="vocab-es">eje de la calzada</div><div class="vocab-en">centre axis of the road</div></div>
+      <div class="vocab-item"><div class="vocab-es">calle sin salida</div><div class="vocab-en">dead-end street / cul-de-sac</div></div>
+      <div class="vocab-item"><div class="vocab-es">cruce de vías</div><div class="vocab-en">road junction / crossing point</div></div>
+      <div class="vocab-item"><div class="vocab-es">intermitente</div><div class="vocab-en">indicator / turn signal</div></div>
+      <div class="vocab-item"><div class="vocab-es">maniobra complementaria</div><div class="vocab-en">supplementary manoeuvre</div></div>
+    </div>
+  </div>
 </div>
+<!-- ═══════════════ END TEMA 10 ═══════════════ -->
+
+<!-- ═══════════════ TEMA 11 ═══════════════ -->
+<div class="tema-panel" id="tema11">
+  <div class="tema-hdr">
+    <span class="tema-num">TEMA 11</span>
+    <div>
+      <div class="tema-title">Detención, parada y estacionamiento</div>
+      <div class="tema-en">Stopping, parking-stop and parking</div>
+    </div>
+  </div>
+  <div class="intro-box">
+    <strong>¿Qué se examina aquí?</strong> Exam questions love <strong>the 3 definitions</strong> (detención vs parada vs estacionamiento), the <strong>2-minute rule</strong>, where <strong>double-file stopping is allowed vs prohibited</strong>, the <strong>3-metre gap rule</strong>, and vehicle immobilisation by agents. Know the difference between prohibited stopping and prohibited parking lists — they overlap but are not identical.
+  </div>
+
+  <div class="section">
+    <div class="sec-title">1. Las tres definiciones fundamentales <span class="sec-en">· The three core definitions</span></div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Término · Term</th><th>Definición · Definition</th><th>Voluntaria?</th><th>¿Puede abandonar conductor?</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Detención</strong><br><span class="tbl-note">Stopping / halt</span></td>
+            <td>Inmovilización <strong>accidental o momentánea</strong> por emergencia, necesidades de circulación, o cumplimiento reglamentario (stop, semáforo, avería, atasco).<span class="tbl-note">Accidental or momentary immobilisation: emergency, traffic need, or compliance (stop sign, red light, breakdown, traffic jam).</span></td>
+            <td><span class="badge b-re">No — involuntaria</span></td>
+            <td><span class="tbl-note">Generalmente dentro de la corriente circulatoria</span></td>
+          </tr>
+          <tr>
+            <td><strong>Parada</strong><br><span class="tbl-note">Brief voluntary stop</span></td>
+            <td>Inmovilización voluntaria durante <strong>menos de 2 minutos</strong>. El conductor no puede abandonar el vehículo (aunque puede bajarse de él).<span class="tbl-note">Voluntary, under 2 minutes. Driver cannot leave the vehicle (may step out briefly).</span></td>
+            <td><span class="badge b-am">Sí</span></td>
+            <td><span class="badge b-re">No puede abandonarlo</span></td>
+          </tr>
+          <tr>
+            <td><strong>Estacionamiento</strong><br><span class="tbl-note">Parking</span></td>
+            <td>Inmovilización que <strong>no es detención ni parada</strong>. Voluntaria, fuera de la corriente circulatoria.<span class="tbl-note">Any immobilisation that isn't a halt or brief stop. Driver may leave.</span></td>
+            <td><span class="badge b-am">Sí</span></td>
+            <td><span class="badge b-te">Sí puede abandonarlo</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">2. Normas al inmovilizar el vehículo <span class="sec-en">· Rules when stopping / parking</span></div>
+    <div class="co co-bl"><strong>Posición:</strong> paralelo al borde de la calzada. Usar el menor espacio necesario — no ocupar más de un espacio.<span class="en">Park parallel to the kerb. Use minimum space — don't take up more than one space.</span></div>
+    <div class="co co-bl"><strong>Puertas:</strong> prohibido abrirlas antes de la completa inmovilización o sin cerciorarse de que no hay peligro, especialmente para ciclistas. Entrar y salir siempre por el lado más próximo al borde de la vía.<span class="en">Never open doors while moving. Check for cyclists. Enter/exit from the kerb side.</span></div>
+    <div class="card">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.5rem">Al dejar el puesto de conducción · When leaving the driver's seat:</div>
+      <div class="co co-te">• Parar el motor y desconectar el sistema de arranque.<span class="en">· Stop engine and disable ignition.</span></div>
+      <div class="co co-te">• Dejar accionado el <strong>freno de estacionamiento</strong>.<span class="en">· Apply the handbrake.</span></div>
+      <div class="co co-te">• Cambios manuales: <span class="hl">1ª velocidad</span> en rampa ascendente, <span class="hl">marcha atrás</span> en descendente. Automáticos: posición <span class="hl">P</span>.<span class="en">· Manual: 1st uphill, reverse downhill. Automatic: select P.</span></div>
+      <div class="co co-am">Vehículos &gt;3.500 kg, autobuses y conjuntos en pendiente sensible: calzar debidamente o apoyar rueda directriz en el bordillo (hacia el centro en rampa, hacia afuera en descenso). <span class="hl-re">Prohibido usar piedras u objetos no destinados a ello.</span> Retirar los calzos al reanudar la marcha.<span class="en">Heavy vehicles on slopes: proper chocks or wheel against kerb (inward on ascent, outward on descent). No improvised chocks. Remove chocks before moving off.</span></div>
+    </div>
+    <div class="trap">
+      <div class="trap-lbl">⚠ Motor en túnel/lugar cerrado · Engine in tunnel or enclosed space</div>
+      <p>Aunque el conductor no abandone el puesto, debe parar el motor si el vehículo lleva más de <span class="hl">2 minutos detenido en túnel o lugar cerrado</span>. Conservar el <strong>alumbrado de posición</strong> encendido.<span class="en">Even if staying in the vehicle: switch engine off after 2+ minutes in tunnel/enclosed space. Keep position lights on.</span></p>
+    </div>
+    <div class="trap">
+      <div class="trap-lbl">⚠ Repostaje · Refuelling</div>
+      <p>Al cargar combustible: parar el motor, <strong>apagar las luces, la radio y el teléfono móvil</strong> — tanto si lo sirve un empleado como el propio conductor.<span class="en">When refuelling: engine off, lights off, radio off, mobile off — regardless of who pumps the fuel.</span></p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">3. Posición correcta de parada/estacionamiento <span class="sec-en">· Correct stopping/parking position by road type</span></div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Tipo de vía · Road type</th><th>Norma · Rule</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Vías interurbanas</strong></td><td>Siempre <span class="hl">fuera de la calzada</span>, en el lado derecho. Dejar libre el arcén transitable.<span class="tbl-note">Always off the carriageway, right side. Passable hard shoulder must remain clear.</span></td></tr>
+          <tr><td><strong>Autopistas / autovías</strong></td><td>Solo en <span class="hl">zonas habilitadas</span> (áreas de servicio). Detención por avería/emergencia: arcén derecho.<span class="tbl-note">Only in designated service areas. Emergency stops: right hard shoulder.</span></td></tr>
+          <tr><td><strong>Vías urbanas / travesías</strong></td><td>Lo más cerca posible del <span class="hl">borde derecho</span>. En sentido único de poblado, también se puede usar el lado izquierdo.<span class="tbl-note">Right edge. One-way urban: left side also permitted.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">4. Prohibición de parar Y estacionar <span class="sec-en">· Stopping AND parking prohibited</span></div>
+    <div class="trap">
+      <div class="trap-lbl">⚠ Aplica a ambos (parada y estacionamiento) · Applies to both</div>
+      <table class="tbl" style="margin-top:.3rem">
+        <tbody>
+          <tr><td>Curvas, cambios de rasante de <strong>visibilidad reducida</strong>, sus proximidades, y tramos afectados por señal Túnel</td></tr>
+          <tr><td>Pasos a nivel, pasos para ciclistas, pasos para peatones (<em>no</em> sus proximidades)</td></tr>
+          <tr><td>Carriles o partes reservados exclusivamente a ciertos usuarios o servicios</td></tr>
+          <tr><td>Intersecciones y proximidades si dificulta giros (interurbano: si genera peligro por falta de visibilidad)</td></tr>
+          <tr><td>Zonas señalizadas para uso exclusivo de <strong>minusválidos</strong></td></tr>
+          <tr><td>Sobre raíles de tranvía o tan cerca que entorpezca su circulación</td></tr>
+          <tr><td>Lugares que impidan la visibilidad de señales o que obligan a maniobras antirreglamentarias</td></tr>
+          <tr><td><strong>Autopistas y autovías</strong>, salvo zonas habilitadas</td></tr>
+          <tr><td>Carriles de transporte público urbano o reservados para bicicletas</td></tr>
+          <tr><td>Zonas de parada/estacionamiento exclusivo de transporte público urbano</td></tr>
+          <tr><td>Parte <strong>izquierda</strong> de una vía interurbana</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">5. Prohibición adicional solo de estacionar <span class="sec-en">· Parking-only prohibitions (additional)</span></div>
+    <div class="co co-re">Todo lo prohibido para parar + los siguientes casos adicionales:<span class="en">Everything above plus:</span></div>
+    <div class="co co-gy">• Zonas con limitación horaria sin colocar el distintivo o cuando se excede el tiempo.<span class="en">· Time-limited zones without correct disc/permit, or over the time limit.</span></div>
+    <div class="co co-gy">• Zonas señalizadas para <strong>carga y descarga</strong>.<span class="en">· Loading/unloading zones.</span></div>
+    <div class="co co-gy">• Sobre <strong>aceras, paseos y zonas peatonales</strong>.<span class="en">· On pavements, promenades or pedestrian areas.</span></div>
+    <div class="co co-gy">• Delante de <strong>vados señalizados correctamente</strong>.<span class="en">· In front of properly marked dropped kerbs/vados.</span></div>
+    <div class="co co-am"><strong>Doble fila:</strong> prohibido estacionar; sí se permite <em>parar</em> siempre que no se obstaculice la circulación y no haya espacio libre en las proximidades.<span class="en">Double-parking: parking is prohibited; a brief stop is allowed if traffic is not obstructed and no nearby space is free.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">6. Paradas/estacionamientos peligrosos o que obstruyen gravemente <span class="sec-en">· Dangerous / severely obstructing stops</span></div>
+    <div class="card">
+      <div style="font-weight:600;font-size:.84rem;margin-bottom:.45rem;color:var(--re)">Paradas peligrosas · Dangerous stops include:</div>
+      <div class="co co-re">Distancia entre el vehículo y el borde opuesto (o marca de prohibición de atravesar) <span class="hl">inferior a 3 metros</span>, o que no permita el paso de otros vehículos.<span class="en">Gap to opposite edge less than 3 metres, or insufficient for other vehicles to pass.</span></div>
+      <div class="co co-re">Cuando impida incorporarse a la circulación a otro vehículo debidamente parado/estacionado.<span class="en">When blocking another properly stopped/parked vehicle from rejoining traffic.</span></div>
+      <div class="co co-re">Cuando obstaculice el uso normal de un vado señalizado o paso rebajado para personas con movilidad reducida.<span class="en">When blocking a properly marked dropped kerb or accessible ramp.</span></div>
+      <div class="co co-re">Cuando impida el giro autorizado, o se efectúe en medianas, isletas, separadores u otros elementos de canalización del tráfico.<span class="en">When blocking an authorised turn, or stopped on medians, islands or traffic channelling elements.</span></div>
+    </div>
+    <div class="card" style="margin-top:.5rem">
+      <div style="font-weight:600;font-size:.84rem;margin-bottom:.45rem;color:var(--re)">Estacionamientos peligrosos · Dangerous parking includes:</div>
+      <div class="co co-re">En zona reservada a carga y descarga durante horas de utilización.<span class="en">In a loading zone during operative hours.</span></div>
+      <div class="co co-re">En doble fila <strong>sin conductor</strong>.<span class="en">Double-parked with no driver present.</span></div>
+      <div class="co co-re">En una parada de transporte público señalizada y delimitada.<span class="en">In a marked and delimited public transport stop.</span></div>
+      <div class="co co-re">En espacios reservados a servicios de urgencia y seguridad.<span class="en">In spaces reserved for emergency/security services.</span></div>
+      <div class="co co-re">En vía calificada de atención preferente, en espacios específicamente señalizados.<span class="en">In specifically marked spaces on priority-attention roads.</span></div>
+      <div class="co co-re">En medio de la calzada.<span class="en">In the middle of the carriageway.</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">7. Inmovilización del vehículo por agentes <span class="sec-en">· Vehicle immobilisation by traffic officers</span></div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Causa · Reason</th><th>EN</th></tr></thead>
+        <tbody>
+          <tr><td>El conductor se niega a las <strong>pruebas de alcoholemia</strong></td><td>Refusing breathalyser test</td></tr>
+          <tr><td>Resultado <strong>positivo</strong> en alcoholemia/análisis (salvo que otra persona habilitada conduzca)</td><td>Positive alcohol/drug test</td></tr>
+          <tr><td>Vehículo carece de <strong>autorización administrativa</strong> para circular</td><td>No valid authorisation to circulate</td></tr>
+          <tr><td>Deficiencias que suponen <strong>riesgo especialmente grave</strong></td><td>Serious safety defects</td></tr>
+          <tr><td>Conductor o pasajero no usan el <strong>casco</strong> cuando es obligatorio</td><td>No helmet when required</td></tr>
+          <tr><td>Carece de <strong>seguro obligatorio</strong></td><td>No mandatory insurance</td></tr>
+          <tr><td>Ocupación excesiva: supera en un <span class="hl">50%</span> las plazas autorizadas (excluido el conductor)</td><td>Over 50% excess occupancy</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">8. Avería o accidente — procedimiento <span class="sec-en">· Breakdown or accident procedure</span></div>
+    <div class="co co-bl">Señalizar convenientemente y adoptar medidas para retirarlo en el menor tiempo posible.<span class="en">Signal properly and remove as quickly as possible.</span></div>
+    <div class="co co-bl">Si puede continuar: hacerlo de forma inmediata y segura. Si necesita auxilio: arcén derecho hacia la primera salida.<span class="en">If driveable: move immediately. If needing assistance: right hard shoulder to nearest exit.</span></div>
+    <div class="co co-am">Si totalmente inmovilizado: ocupantes deben abandonarlo (si hay lugar seguro fuera de la plataforma), siempre por el <strong>lado contrario al flujo de tráfico</strong>. Si no es seguro salir, permanecer con el cinturón abrochado.<span class="en">If immobilised: exit away from traffic. If unsafe to exit, stay inside with seatbelt on.</span></div>
+    <div class="trap">
+      <div class="trap-lbl">⚠ Prohibido completar el parte en la calzada · No accident forms on the road</div>
+      <p>Está <strong>prohibido</strong> cumplimentar el parte de accidente en la plataforma de circulación. Debe hacerse en un lugar seguro fuera de la vía.<span class="en">Filling in accident report forms on the carriageway is prohibited. Move to a safe location off the road.</span></p>
+    </div>
+    <div class="co co-gy">La retirada del vehículo accidentado o averiado solo puede realizarla un <strong>vehículo de auxilio en vía pública inscrito en el Registro Estatal de Auxilio en Vías Públicas</strong>.<span class="en">Only officially registered recovery vehicles may tow broken-down or accident vehicles.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Vocabulario clave <span class="sec-en">· Key vocabulary</span></div>
+    <div class="vocab-grid">
+      <div class="vocab-item"><div class="vocab-es">detención</div><div class="vocab-en">involuntary halt / stopping</div></div>
+      <div class="vocab-item"><div class="vocab-es">parada</div><div class="vocab-en">brief voluntary stop (&lt;2 min)</div></div>
+      <div class="vocab-item"><div class="vocab-es">estacionamiento</div><div class="vocab-en">parking (driver may leave)</div></div>
+      <div class="vocab-item"><div class="vocab-es">doble fila</div><div class="vocab-en">double parking</div></div>
+      <div class="vocab-item"><div class="vocab-es">freno de estacionamiento</div><div class="vocab-en">handbrake / parking brake</div></div>
+      <div class="vocab-item"><div class="vocab-es">calzo</div><div class="vocab-en">wheel chock</div></div>
+      <div class="vocab-item"><div class="vocab-es">vado</div><div class="vocab-en">dropped kerb / vehicle access</div></div>
+      <div class="vocab-item"><div class="vocab-es">arcén transitable</div><div class="vocab-en">passable hard shoulder</div></div>
+      <div class="vocab-item"><div class="vocab-es">limitación horaria</div><div class="vocab-en">time-limited parking zone</div></div>
+      <div class="vocab-item"><div class="vocab-es">poste de socorro</div><div class="vocab-en">emergency phone post</div></div>
+      <div class="vocab-item"><div class="vocab-es">inmovilización</div><div class="vocab-en">immobilisation (any type)</div></div>
+      <div class="vocab-item"><div class="vocab-es">alumbrado de posición</div><div class="vocab-en">position / sidelights</div></div>
+    </div>
+  </div>
+</div>
+<!-- ═══════════════ END TEMA 11 ═══════════════ -->
+
+<!-- ═══════════════ TEMA 12 ═══════════════ -->
+<div class="tema-panel" id="tema12">
+  <div class="tema-hdr">
+    <span class="tema-num">TEMA 12</span>
+    <div>
+      <div class="tema-title">Prioridad de paso</div>
+      <div class="tema-en">Right of way / Priority rules</div>
+    </div>
+  </div>
+  <div class="intro-box">
+    <strong>¿Qué se examina aquí?</strong> One of the most exam-heavy topics. Focus on the <strong>priority hierarchy at intersections</strong> (agents &gt; signals &gt; signs &gt; rules), the <strong>yield-to-the-right rule</strong>, <strong>roundabout priority</strong>, <strong>cyclist groups</strong>, the <strong>7% gradient rule</strong>, and <strong>priority vehicle obligations</strong>. Also know when cyclists have priority over motor vehicles.
+  </div>
+
+  <div class="section">
+    <div class="sec-title">1. Jerarquía de preferencia en intersecciones <span class="sec-en">· Hierarchy at intersections</span></div>
+    <div class="pchain">
+      <div class="prow"><div class="pnum" style="background:var(--re);color:#fff">1º</div><div class="pcon"><div class="pname">Agentes de circulación</div><div class="pname-en">Traffic officers</div><div class="pdesc">Sus órdenes prevalecen sobre cualquier señal o norma. / Their orders override all signs and rules.</div></div></div>
+      <div class="prow"><div class="pnum" style="background:var(--am);color:#fff">2º</div><div class="pcon"><div class="pname">Semáforos</div><div class="pname-en">Traffic lights</div><div class="pdesc">Verde = prioridad. Rojo = detención obligatoria.</div></div></div>
+      <div class="prow"><div class="pnum" style="background:#9A8A18;color:#fff">3º</div><div class="pcon"><div class="pname">Señales verticales de prioridad</div><div class="pname-en">Priority signs</div><div class="pdesc">Calzada con prioridad · Intersección con prioridad · Ceda el paso · Stop.</div></div></div>
+      <div class="prow"><div class="pnum" style="background:var(--te);color:#fff">4º</div><div class="pcon"><div class="pname">Normas generales de prioridad</div><div class="pname-en">General priority rules</div><div class="pdesc">Ceder a la derecha, pavimentada vs sin pavimentar, raíles, glorieta, etc.</div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">2. Señales de prioridad — significado exacto <span class="sec-en">· Priority signs — exact meaning</span></div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Señal · Sign</th><th>Efecto · Effect</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Intersección con prioridad</strong></td><td>Tienes prioridad en esa intersección específica sobre los que vienen por la otra vía.<span class="tbl-note">Priority at this specific junction over vehicles from the other road.</span></td></tr>
+          <tr><td><strong>Calzada con prioridad</strong></td><td>Tienes prioridad en <em>todas</em> las intersecciones hasta la señal <strong>Fin de calzada con prioridad</strong>.<span class="tbl-note">Priority at ALL intersections until the "End of priority road" sign.</span></td></tr>
+          <tr><td><strong>Ceda el paso</strong></td><td>Ceder siempre el paso a los de la vía preferente (cualquier lado), deteniéndose si es necesario.<span class="tbl-note">Always yield; stop completely if needed. Can continue slowly if clearly free.</span></td></tr>
+          <tr><td><strong>Stop</strong></td><td><em>Siempre</em> detenerse completamente, luego ceder el paso.<span class="tbl-note">MUST make a complete stop every time, regardless of visibility. Then yield.</span></td></tr>
+          <tr><td><strong>Intersección con prioridad de la derecha</strong></td><td>Rige la norma general: ceder solo a quien venga por la derecha.<span class="tbl-note">Normal yield-right rule applies here.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="trap">
+      <div class="trap-lbl">⚠ Stop vs Ceda el paso</div>
+      <p><strong>Stop:</strong> siempre parada completa aunque la visibilidad sea perfecta. / <strong>Ceda el paso:</strong> puedes continuar despacio si la vía está claramente libre.<span class="en">Stop: always a full stop, no exceptions. Yield: slow approach if clearly clear.</span></p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">3. Normas generales de prioridad (sin señalización) <span class="sec-en">· General priority rules (no signs)</span></div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Situación · Situation</th><th>Quién tiene prioridad · Priority belongs to</th></tr></thead>
+        <tbody>
+          <tr><td>Intersección sin señalizar</td><td>El que viene por la <span class="hl">derecha</span>.<span class="tbl-note">Vehicle from the right.</span></td></tr>
+          <tr><td>Vía pavimentada vs sin pavimentar</td><td>La <span class="hl">vía pavimentada</span>.<span class="tbl-note">Paved road over unpaved.</span></td></tr>
+          <tr><td>Vía pública vs camino privado</td><td>La <span class="hl">vía pública</span>.<span class="tbl-note">Public road over private track.</span></td></tr>
+          <tr><td>Vehículos sobre raíles (tranvía, etc.)</td><td>Los vehículos sobre <span class="hl">raíles</span> (salvo señalización contraria).<span class="tbl-note">Rail vehicles have priority unless signs say otherwise.</span></td></tr>
+          <tr><td>Glorieta sin señalizar</td><td>Los vehículos <span class="hl">dentro de la vía circular</span>.<span class="tbl-note">Vehicles already in the roundabout.</span></td></tr>
+          <tr><td>Glorieta con semáforo</td><td>El que indique el <span class="hl">semáforo</span>.<span class="tbl-note">Traffic light overrides roundabout rule.</span></td></tr>
+          <tr><td>Incorporación a autopista/autovía</td><td>El que circula por la <span class="hl">autopista/autovía</span>.<span class="tbl-note">Motorway traffic (should help merging vehicles where possible).</span></td></tr>
+          <tr><td>Estrechamiento sin señalizar</td><td>El que entró primero; en duda, el de <span class="hl">mayor dificultad de maniobra</span>.<span class="tbl-note">First in; if unclear, the one with the harder manoeuvre.</span></td></tr>
+          <tr><td>Pendiente &gt;7% estrecha</td><td>El que circula en sentido <span class="hl">ascendente</span> (salvo que pueda llegar primero a un apartadero).<span class="tbl-note">Uphill vehicle has priority on steep narrow roads.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">4. Vehículos vs peatones y ciclistas <span class="sec-en">· Vehicles vs pedestrians &amp; cyclists</span></div>
+    <div class="co co-bl">Norma general: los vehículos tienen prioridad sobre peatones y animales, <strong>excepto</strong> en los casos siguientes.<span class="en">General rule: vehicles have priority over pedestrians and animals EXCEPT in these cases.</span></div>
+    <div class="card">
+      <div style="font-weight:600;font-size:.84rem;margin-bottom:.4rem">Ceder el paso a peatones · Yield to pedestrians when:</div>
+      <div class="co co-te">• En <strong>pasos de peatones debidamente señalizados</strong>.<span class="en">· At marked pedestrian crossings.</span></div>
+      <div class="co co-te">• Al girar para entrar en otra vía y haya peatones cruzándola (aunque no haya paso señalizado).<span class="en">· Turning into another road and pedestrians are crossing (even without a marked crossing).</span></div>
+      <div class="co co-te">• Al cruzar un arcén por el que estén cruzando peatones sin zona peatonal.<span class="en">· When crossing a hard shoulder where pedestrians are walking (no pavement available).</span></div>
+      <div class="co co-te">• En zonas peatonales al cruzarlas por los pasos habilitados.<span class="en">· In pedestrian zones, at designated vehicle crossings.</span></div>
+      <div class="co co-te">• Al subir/bajar pasajeros de transporte colectivo en parada señalizada, si están entre el vehículo y la zona peatonal.<span class="en">· Passengers boarding/alighting a public transport stop, if between bus and pavement.</span></div>
+      <div class="co co-te">• Tropas en formación, filas escolares o comitivas organizadas.<span class="en">· Troops in formation, school crocodiles, organised processions.</span></div>
+    </div>
+    <div class="card" style="margin-top:.5rem">
+      <div style="font-weight:600;font-size:.84rem;margin-bottom:.4rem">Ceder el paso a ciclistas · Yield to cyclists when:</div>
+      <div class="co co-te">• Circulan por <strong>carril bici, paso para ciclistas o arcén</strong> debidamente señalizado.<span class="en">· Cycling in a marked cycle lane, cycle crossing or cycle hard shoulder.</span></div>
+      <div class="co co-te">• El vehículo de motor gira a la derecha o izquierda y hay un ciclista en sus proximidades.<span class="en">· A motor vehicle turns right or left with a nearby cyclist.</span></div>
+      <div class="co co-te">• Circulando en <strong>grupo</strong>, si el primero ya ha iniciado el cruce o entrado en una glorieta: ceder el paso a <span class="hl">todo el grupo</span>.<span class="en">· Group of cyclists: if the leader has entered the junction or roundabout, yield to the WHOLE group.</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">5. Vehículos prioritarios <span class="sec-en">· Priority / emergency vehicles</span></div>
+    <div class="co co-re"><strong>Vehículos prioritarios:</strong> Policía · Asistencia sanitaria · Extinción de incendios · Protección Civil y Salvamento.<span class="en">Emergency vehicles: Police · Ambulance / medical · Fire brigade · Civil Protection &amp; Rescue.</span></div>
+    <div class="co co-am">Tienen prioridad cuando circulan en <strong>servicio urgente</strong> y usan las <strong>señales reglamentarias</strong> (luces + sirena).<span class="en">Priority only when on urgent service AND displaying correct signals (lights + siren).</span></div>
+    <div class="co co-bl">En servicio urgente, están <strong>exentos del Reglamento General de Circulación</strong> excepto de obedecer a los agentes. En autopista/autovía: pueden dar media vuelta, circular en sentido contrario por el arcén, o penetrar en medianas/pasos transversales.<span class="en">Exempt from all traffic regulations on urgent duty, EXCEPT agent orders. On motorways: may U-turn, drive contra-flow on hard shoulder, use median crossings.</span></div>
+    <div class="trap">
+      <div class="trap-lbl">⚠ Reacción del resto de conductores · Other drivers' obligations</div>
+      <p>Al percibir las señales de un vehículo prioritario: apartarse <strong>normalmente a la derecha</strong> o detenerse si es necesario para facilitarle el paso.<span class="en">On seeing/hearing an emergency vehicle: move right or stop to let it through.</span></p>
+    </div>
+    <div class="co co-gy">Vehículos <strong>no prioritarios</strong> que presten servicio de urgencia: no tienen preferencia de paso, deben respetar las normas. Pero los demás deben facilitarles el paso como si fueran prioritarios.<span class="en">Non-priority vehicles on emergency-like service: no legal right of way, must follow rules. But others should still try to help them pass.</span></div>
+    <div class="co co-bl">Vehículos de auxilio en vía pública en servicio: preferencia de paso, pueden parar/estacionar donde sea necesario, usan luz luminosa durante las tareas (no acústica salvo en condiciones urbanas que lo exijan).<span class="en">Recovery vehicles on active call: priority, may stop anywhere, use lights only during work (no siren except in urban traffic conditions requiring it).</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">6. Orden de prioridad en estrechamientos — quién retrocede <span class="sec-en">· Reversal priority at narrow sections</span></div>
+    <div class="co co-am">En estrechamiento señalizado con <strong>Prioridad en sentido contrario</strong> o <strong>Ceda el paso</strong>: el que llega por ese extremo retrocede para dejar pasar al otro.<span class="en">At signed narrowing: the vehicle at the signed end must reverse to let the other through.</span></div>
+    <div class="co co-gy">Sin señalización: prioridad para quien entró primero. En duda: el de mayor dificultad de maniobra. Si mismos tipos: el que deba retroceder menor distancia; en igualdad, el más ancho/largo/pesado.<span class="en">Unsigned: first in wins. If unclear: greatest difficulty. Same type: shortest reverse; if equal, widest/longest/heaviest.</span></div>
+    <div class="card" style="margin-top:.55rem">
+      <div style="font-weight:600;font-size:.84rem;margin-bottom:.4rem">Orden (el nº 10 retrocede primero) · Priority order (10 reverses first)</div>
+      <table class="tbl" style="font-size:.77rem">
+        <thead><tr><th>#</th><th>Tipo de vehículo · Vehicle type</th></tr></thead>
+        <tbody>
+          <tr><td class="s-pts">1</td><td>Vehículos especiales/régimen transporte especial (exceden masas o dimensiones) · Oversized special vehicles</td></tr>
+          <tr><td class="s-pts">2</td><td>Conjuntos de vehículos (excepto tipo 4) · Vehicle combinations</td></tr>
+          <tr><td class="s-pts">3</td><td>Vehículos de tracción animal · Animal-drawn vehicles</td></tr>
+          <tr><td class="s-pts">4</td><td>Turismos + remolque ≤750 kg y autocaravanas · Cars with light trailer &amp; motorhomes</td></tr>
+          <tr><td class="s-pts">5</td><td>Transporte colectivo de viajeros · Public passenger transport</td></tr>
+          <tr><td class="s-pts">6</td><td>Camiones, tractocamiones, furgones · Lorries, tractor-units, vans</td></tr>
+          <tr><td class="s-pts">7</td><td>Turismos y derivados de turismos · Cars and car derivatives</td></tr>
+          <tr><td class="s-pts">8</td><td>Vehículos especiales (dentro de dimensiones), cuadriciclos · Special vehicles within limits, quadricycles</td></tr>
+          <tr><td class="s-pts">9</td><td>Vehículos de tres ruedas, motocicletas con sidecar, ciclomotores de tres ruedas · Trikes, sidecar motorcycles, 3-wheel mopeds</td></tr>
+          <tr><td class="s-pts">10</td><td>Motocicletas, ciclomotores de dos ruedas y bicicletas · Motorcycles, 2-wheel mopeds, bicycles</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:.73rem;color:var(--tx3);margin-top:.4rem;font-style:italic">El nº 10 retrocede primero (menos prioritario). El nº 1 nunca retrocede (más prioritario). / #10 reverses first; #1 never reverses.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">7. Pasos a nivel y túneles <span class="sec-en">· Level crossings &amp; tunnels</span></div>
+    <div class="co co-re">Nunca penetrar en un <strong>paso a nivel o puente móvil</strong> con barreras atravesadas o en movimiento. Extremar la prudencia y reducir la velocidad al aproximarse.<span class="en">Never enter a level crossing or moveable bridge if barriers are across or moving. Slow down when approaching.</span></div>
+    <div class="co co-re">Nunca penetrar en un <strong>túnel</strong> si la situación del tráfico puede dejarte detenido dentro. Tampoco si el semáforo de entrada no lo permite.<span class="en">Never enter a tunnel if traffic might leave you stopped inside. Obey the tunnel entry light.</span></div>
+    <div class="co co-bl">En túneles: distancia de seguridad mínima <span class="hl">100 m o 4 segundos</span>. Para vehículos &gt;3.500 kg: <span class="hl">150 m o 6 segundos</span>.<span class="en">Tunnel following distance: 100 m or 4 sec (vehicles &gt;3500 kg: 150 m or 6 sec).</span></div>
+    <div class="co co-re">En túneles de doble sentido: prohibido adelantar, salvo que haya más de un carril en tu sentido.<span class="en">Two-way tunnels: no overtaking unless more than one lane in your direction.</span></div>
+    <div class="trap">
+      <div class="trap-lbl">⚠ Inmovilización en túnel por emergencia · Breakdown inside a tunnel</div>
+      <p>Apagar el motor · Conectar señal de emergencia · Mantener luces de posición · Colocar dispositivo luminoso de preseñalización · Evacuar al refugio/salida más próxima <strong>sin transitar por la calzada</strong>.<span class="en">Engine off · Hazard lights · Keep sidelights on · Place warning device · Evacuate to nearest refuge/exit WITHOUT walking on the carriageway.</span></p>
+    </div>
+    <div class="trap">
+      <div class="trap-lbl">⚠ Incendio en túnel · Fire in tunnel</div>
+      <p>Aproximar el vehículo todo lo posible a la derecha · Apagar motor · Dejar llave puesta y puertas abiertas · Evacuar en <strong>sentido contrario al fuego</strong> hacia el refugio/salida más próxima.<span class="en">Move car right · Engine off · Leave key in and doors open · Evacuate in the direction AWAY from the fire.</span></p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Vocabulario clave <span class="sec-en">· Key vocabulary</span></div>
+    <div class="vocab-grid">
+      <div class="vocab-item"><div class="vocab-es">prioridad de paso</div><div class="vocab-en">right of way / priority</div></div>
+      <div class="vocab-item"><div class="vocab-es">ceder el paso</div><div class="vocab-en">to yield / give way</div></div>
+      <div class="vocab-item"><div class="vocab-es">intersección</div><div class="vocab-en">junction / intersection</div></div>
+      <div class="vocab-item"><div class="vocab-es">glorieta</div><div class="vocab-en">roundabout</div></div>
+      <div class="vocab-item"><div class="vocab-es">estrechamiento</div><div class="vocab-en">road narrowing</div></div>
+      <div class="vocab-item"><div class="vocab-es">paso a nivel</div><div class="vocab-en">level crossing / grade crossing</div></div>
+      <div class="vocab-item"><div class="vocab-es">sentido ascendente</div><div class="vocab-en">uphill direction</div></div>
+      <div class="vocab-item"><div class="vocab-es">apartadero</div><div class="vocab-en">passing place / lay-by</div></div>
+      <div class="vocab-item"><div class="vocab-es">vehículo prioritario</div><div class="vocab-en">emergency / priority vehicle</div></div>
+      <div class="vocab-item"><div class="vocab-es">carril bici</div><div class="vocab-en">cycle lane</div></div>
+      <div class="vocab-item"><div class="vocab-es">paso para ciclistas</div><div class="vocab-en">cycle crossing</div></div>
+      <div class="vocab-item"><div class="vocab-es">cañada</div><div class="vocab-en">drove road / livestock trail</div></div>
+    </div>
+  </div>
+</div>
+<!-- ═══════════════ END TEMA 12 ═══════════════ -->
+
+<!-- ═══════════════ TEMA 13 ═══════════════ -->
+<div class="tema-panel" id="tema13">
+  <div class="tema-hdr">
+    <span class="tema-num">TEMA 13</span>
+    <div>
+      <div class="tema-title">Transporte de personas, cargas y distintivos</div>
+      <div class="tema-en">Passenger transport, loads, vehicle dimensions &amp; labels</div>
+    </div>
+  </div>
+  <div class="intro-box">
+    <strong>¿Qué se examina aquí?</strong> Key numbers: <strong>12 years</strong> (min moped passenger age), <strong>7 years</strong> (exception with parent), <strong>50% trailer mass limit</strong>, <strong>12 m max length</strong>, <strong>2.55 m max width</strong>, <strong>4 m max height</strong>, load overhang rules (10% / 15% / 1/3), and which <strong>V-labels</strong> mean what. Also: 50% occupancy excess triggers immobilisation.
+  </div>
+
+  <div class="section">
+    <div class="sec-title">1. Transporte de personas en moto y ciclomotor <span class="sec-en">· Passengers on motorcycles &amp; mopeds</span></div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Condición · Condition</th><th>Norma · Rule</th></tr></thead>
+        <tbody>
+          <tr><td>Edad mínima del pasajero (norma general)</td><td><span class="hl">Mayor de 12 años</span>, con casco homologado.<span class="tbl-note">Minimum age: over 12, approved helmet required.</span></td></tr>
+          <tr><td>Posición del pasajero</td><td>A horcajadas, pies en reposapiés laterales, asiento detrás del conductor. <span class="hl-re">Nunca entre el conductor y el manillar.</span><span class="tbl-note">Astride, feet on footrests, seat behind rider. Never between rider and handlebars.</span></td></tr>
+          <tr><td>Excepción: niños &gt;7 años</td><td>Pueden ir en ciclomotores/motocicletas conducidos por padre, madre, tutor o mayor de edad autorizado, con casco homologado.<span class="tbl-note">Children aged 7+ may ride with parent/guardian or authorised adult.</span></td></tr>
+          <tr><td>Sidecar</td><td>El ocupante del sidecar puede ir además del pasajero de la moto.<span class="tbl-note">Sidecar occupant is in addition to the rear-seat passenger.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">2. Remolques en motos, ciclomotores y bicicletas <span class="sec-en">· Trailers on motorcycles, mopeds &amp; bicycles</span></div>
+    <div class="co co-bl">Pueden arrastrar un remolque/semirremolque homologado, siempre que su masa no supere el <span class="hl">50% de la masa en vacío del vehículo tractor</span>.<span class="en">Approved trailer allowed, but max mass = 50% of the towing vehicle's unladen mass.</span></div>
+    <div class="card">
+      <table class="tbl">
+        <tbody>
+          <tr><td>Solo de <strong>día</strong> y en condiciones que no disminuyan la visibilidad. <span class="tbl-note">Daytime only, good visibility only.</span></td></tr>
+          <tr><td>Velocidad reducida un <strong>10%</strong> respecto a la velocidad genérica para vías fuera de poblado. <span class="tbl-note">Speed reduced 10% vs generic interurban limits.</span></td></tr>
+          <tr><td>Prohibido transportar <strong>personas</strong> en el vehículo remolcado. <span class="tbl-note">No passengers in the trailer.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">3. Normas generales de transporte <span class="sec-en">· General transport rules</span></div>
+    <div class="co co-gy">El número de personas no puede superar las <strong>plazas autorizadas</strong>.<span class="en">Passenger count cannot exceed authorised seats.</span></div>
+    <div class="co co-gy">Prohibido transportar personas en emplazamiento distinto al destinado para ellas.<span class="en">No passengers in locations not designated for them.</span></div>
+    <div class="co co-gy">No sobrepasar la <strong>masa máxima autorizada</strong> entre viajeros y equipaje.<span class="en">Total mass of passengers + luggage cannot exceed authorised max.</span></div>
+    <div class="co co-gy">El equipaje no debe afectar al <strong>campo visual</strong> ni a la <strong>libertad de movimientos</strong> del conductor.<span class="en">Luggage must not obstruct the driver's view or freedom of movement.</span></div>
+    <div class="co co-am">Turismos: carga preferiblemente en el <strong>maletero</strong>. Si en asientos traseros, no debe estorbar ni salir proyectada hacia delante. En baca: tumbada sobre la mayor superficie (aumenta el consumo).<span class="en">Cars: load in boot preferably. If in rear seats, must not obstruct or be projected forward in a crash. On roof rack: flat on widest face (increases fuel use).</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">4. Dimensiones máximas de los vehículos <span class="sec-en">· Maximum vehicle dimensions</span></div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Dimensión · Dimension</th><th>Límite general · General limit</th><th>Excepciones · Exceptions</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Longitud · Length</strong></td><td><span class="hl">12 metros</span> (vehículos rígidos)</td><td>Varía según tipo de vehículo.</td></tr>
+          <tr><td><strong>Anchura · Width</strong></td><td><span class="hl">2,55 metros</span> (incluida carga)</td><td>Autobuses para reclusos y vehículos isotermos: <strong>2,60 m</strong>.</td></tr>
+          <tr><td><strong>Altura · Height</strong></td><td><span class="hl">4 metros</span> (incluida carga)</td><td>Autobuses urbanos: <strong>4,20 m</strong>. Camiones especializados en transporte de vehículos, grúas de retirada y vehículos con contenedores intermodales homologados: <strong>4,50 m</strong>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">5. Normas de la carga y sobresalimientos <span class="sec-en">· Load rules &amp; protrusion limits</span></div>
+    <div class="co co-re">La carga NO puede: comprometer la estabilidad · caer sobre la calzada · producir ruido/polvo/molestias · ocultar alumbrado, placas o distintivos · sobresalir de la proyección en planta (como norma general).<span class="en">Load must NOT: compromise stability · fall on road · make noise/dust/nuisance · hide lights or plates · protrude beyond vehicle footprint (general rule).</span></div>
+    <div class="card" style="margin-top:.5rem">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.5rem">Excepciones al sobresalimiento · Allowed protrusion</div>
+      <table class="tbl">
+        <thead><tr><th>Tipo de vehículo</th><th>Regla · Rule</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Vehículos exclusivos de carga</strong> (camiones, furgones) — cargas indivisibles</td>
+            <td>
+              Longitud ≤5 m: <span class="hl">1/3 de la longitud</span> por delante y por detrás.<br>
+              Longitud &gt;5 m: <span class="hl">2 m por delante</span>, <span class="hl">3 m por detrás</span>.<br>
+              Lateral (si dimensión menor &gt; anchura del vehículo): <span class="hl">0,40 m por cada lado</span> (anchura total ≤2,55 m).<br>
+              <span class="tbl-note">In all cases: max total length 12 m.</span>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Vehículos no exclusivos de carga</strong> (turismos, mixtos, etc.)</td>
+            <td>
+              Por detrás: hasta <span class="hl">10%</span> de la longitud (divisible) o <span class="hl">15%</span> (indivisible).<br>
+              Por delante y laterales: <span class="hl-re">nada</span>.<br>
+              <span class="tbl-note">Cars etc.: rear 10% (divisible) or 15% (indivisible). Nothing front or sides.</span>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Vehículos &lt;1 m de anchura</strong></td>
+            <td>
+              Laterales: <span class="hl">50 cm a cada lado</span> del eje longitudinal.<br>
+              Por detrás: <span class="hl">25 cm</span>.<br>
+              Por delante: <span class="hl-re">nada</span>.<br>
+              <span class="tbl-note">Vehicles under 1 m wide: 50 cm each side, 25 cm rear, nothing front.</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">6. Señalización de la carga que sobresale <span class="sec-en">· Marking protruding loads</span></div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Condición · Condition</th><th>Señalización requerida · Marking required</th></tr></thead>
+        <tbody>
+          <tr><td>Día / buena visibilidad — sobresale por <strong>detrás</strong></td><td>Panel cuadrado (<span class="hl">bandas rojas y blancas alternas</span>). Si por toda la anchura: dos paneles.<span class="tbl-note">Red/white striped square panel. Full width: two panels.</span></td></tr>
+          <tr><td>Día / buena visibilidad — sobresale por <strong>delante</strong></td><td><span class="badge b-te">No necesaria señalización</span><span class="tbl-note">No marking needed in daylight.</span></td></tr>
+          <tr><td>Noche / visibilidad reducida — sobresale por <strong>delante</strong></td><td><span class="hl">Luz blanca</span>.<span class="tbl-note">White light required.</span></td></tr>
+          <tr><td>Noche / visibilidad reducida — sobresale por <strong>detrás</strong></td><td>Panel reglamentario + <span class="hl">luz roja</span>.<span class="tbl-note">Panel + red light.</span></td></tr>
+          <tr><td>Noche — lateralmente &gt;40 cm respecto a luces delanteras</td><td>Luces y reflectantes <span class="hl">blancos</span>.<span class="tbl-note">White lights and reflectors.</span></td></tr>
+          <tr><td>Noche — lateralmente &gt;40 cm respecto a luces traseras</td><td>Luces y reflectantes <span class="hl">rojos</span>.<span class="tbl-note">Red lights and reflectors.</span></td></tr>
+          <tr><td>Vehículos &lt;1 m de anchura</td><td><span class="badge b-te">No necesaria señalización</span><span class="tbl-note">No load marking required.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">7. Matrículas <span class="sec-en">· Number plates</span></div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Vehículo · Vehicle</th><th>Placas · Plates</th></tr></thead>
+        <tbody>
+          <tr><td>Turismos · Cars</td><td>2 placas (delantera + trasera).</td></tr>
+          <tr><td>Motocicletas · Motorcycles</td><td>1 placa trasera.</td></tr>
+          <tr><td>Ciclomotores · Mopeds</td><td>1 placa trasera, <span class="hl">color amarillo</span>.</td></tr>
+          <tr><td>Vehículos especiales · Special vehicles</td><td>1 placa trasera, <span class="hl">números en rojo</span>.</td></tr>
+          <tr><td>Remolques/semirremolques ≤750 kg</td><td>1 placa trasera con el <span class="hl">mismo contenido que la del vehículo tractor</span>.</td></tr>
+          <tr><td>Remolques/semirremolques &gt;750 kg</td><td>Placa propia (roja) en centro trasero + placa idéntica a la del tractor en el lado derecho.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">8. Distintivos de los vehículos (Serie V) <span class="sec-en">· Vehicle labels &amp; markings (V-series)</span></div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Código</th><th>Nombre · Name</th><th>Significado · Meaning</th></tr></thead>
+        <tbody>
+          <tr><td><strong>V-1</strong></td><td>Vehículo prioritario</td><td>Policía, extinción incendios, protección civil, asistencia sanitaria — en servicio urgente.<span class="tbl-note">Emergency vehicles on urgent service.</span></td></tr>
+          <tr><td><strong>V-2</strong></td><td>Vehículo-obstáculo en la vía</td><td>Obras/servicios, tractores agrícolas, maquinaria automotriz, transportes especiales, columnas militares — en parada o ≤40 km/h.<span class="tbl-note">Works vehicles, farm machinery, special transports operating slowly or stationary.</span></td></tr>
+          <tr><td><strong>V-4</strong></td><td>Limitación de velocidad</td><td>Velocidad máxima en km/h que figura en la señal.<span class="tbl-note">Vehicle's specific speed limit.</span></td></tr>
+          <tr><td><strong>V-5</strong></td><td>Vehículo lento</td><td>Por construcción, no puede superar <span class="hl">40 km/h</span>.<span class="tbl-note">Cannot exceed 40 km/h by design.</span></td></tr>
+          <tr><td><strong>V-6</strong></td><td>Vehículo largo</td><td>Longitud superior a <span class="hl">12 metros</span>.<span class="tbl-note">Vehicle or combination longer than 12 m.</span></td></tr>
+          <tr><td><strong>V-11</strong></td><td>Mercancías peligrosas</td><td>Delantera y trasera de la unidad de transporte, claramente visible.<span class="tbl-note">Front and rear of transport unit, must be clearly visible.</span></td></tr>
+          <tr><td><strong>V-13</strong></td><td>Conductor novel</td><td>Permiso de conducción con menos de <span class="hl">1 año</span> de antigüedad.<span class="tbl-note">Driver licence less than 1 year old.</span></td></tr>
+          <tr><td><strong>V-15</strong></td><td>Minusválido</td><td>Conductor con discapacidad que reduce su movilidad.<span class="tbl-note">Driver with mobility-reducing disability.</span></td></tr>
+          <tr><td><strong>V-16</strong></td><td>Preseñalización de peligro</td><td>Vehículo inmovilizado en calzada o carga caída. Color <span class="hl">amarillo auto</span>, en la parte más alta posible.<span class="tbl-note">Vehicle immobilised on road or load fallen. Auto-yellow, placed as high as possible.</span></td></tr>
+          <tr><td><strong>V-19</strong></td><td>Distintivo ITV</td><td>Ha pasado la ITV favorablemente; fecha de próxima inspección.<span class="tbl-note">Passed vehicle technical inspection; next inspection date shown.</span></td></tr>
+          <tr><td><strong>V-20</strong></td><td>Panel para cargas que sobresalen</td><td>Carga sobresale posteriormente.<span class="tbl-note">Load protrudes rearwards.</span></td></tr>
+          <tr><td><strong>V-21</strong></td><td>Cartel avisador vehículo especial</td><td>Circulación próxima de un vehículo especial o en régimen de transporte especial.<span class="tbl-note">Warns of nearby special/oversized transport vehicle.</span></td></tr>
+          <tr><td><strong>V-24</strong></td><td>Vehículo de auxilio en vías públicas</td><td>Servicio de auxilio en vía pública.<span class="tbl-note">Public road recovery/assistance vehicle.</span></td></tr>
+          <tr><td><strong>V-25</strong></td><td>Distintivo ambiental</td><td>Clasificación ambiental: 0 emisiones, ECO, C, B. Ángulo inferior derecho del parabrisas, cara interior.<span class="tbl-note">Environmental class. Bottom right of windscreen, interior side.</span></td></tr>
+          <tr><td><strong>V-26</strong></td><td>Uso compartido</td><td>Vehículo de uso compartido (carsharing).<span class="tbl-note">Car-sharing vehicle.</span></td></tr>
+          <tr><td><strong>V-27</strong></td><td>Triángulo Virtual</td><td>Voluntario. Solo en vehículos conectados con la plataforma DGT. Activa para advertir de peligro próximo.<span class="tbl-note">Optional. Only on DGT-connected vehicles. Activates to warn of nearby reported danger.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="trap">
+      <div class="trap-lbl">⚠ Colocación V-25 y V-26 · Placement of V-25 &amp; V-26</div>
+      <p>Con parabrisas: ángulo inferior derecho, cara <strong>interior</strong>, cara impresa autoadhesiva. Sin parabrisas: sitio bien visible, cara sin imprimir autoadhesiva.<span class="en">With windscreen: bottom right, interior face, printed side adhesive. Without windscreen: visible location, unprinted side adhesive.</span></p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Vocabulario clave <span class="sec-en">· Key vocabulary</span></div>
+    <div class="vocab-grid">
+      <div class="vocab-item"><div class="vocab-es">a horcajadas</div><div class="vocab-en">astride / straddling</div></div>
+      <div class="vocab-item"><div class="vocab-es">reposapiés laterales</div><div class="vocab-en">footrests (side)</div></div>
+      <div class="vocab-item"><div class="vocab-es">masa en vacío</div><div class="vocab-en">unladen / kerb mass</div></div>
+      <div class="vocab-item"><div class="vocab-es">masa máxima autorizada</div><div class="vocab-en">authorised maximum mass (GVW)</div></div>
+      <div class="vocab-item"><div class="vocab-es">proyección en planta</div><div class="vocab-en">top-down footprint / plan view</div></div>
+      <div class="vocab-item"><div class="vocab-es">carga indivisible</div><div class="vocab-en">indivisible load</div></div>
+      <div class="vocab-item"><div class="vocab-es">vehículo isotermo</div><div class="vocab-en">temperature-controlled vehicle</div></div>
+      <div class="vocab-item"><div class="vocab-es">baca</div><div class="vocab-en">roof rack / roof carrier</div></div>
+      <div class="vocab-item"><div class="vocab-es">sidecar</div><div class="vocab-en">sidecar</div></div>
+      <div class="vocab-item"><div class="vocab-es">remolque / semirremolque</div><div class="vocab-en">trailer / semi-trailer</div></div>
+      <div class="vocab-item"><div class="vocab-es">conductor novel</div><div class="vocab-en">novice driver (&lt;1 year licence)</div></div>
+      <div class="vocab-item"><div class="vocab-es">ITV</div><div class="vocab-en">vehicle technical inspection (MOT equivalent)</div></div>
+    </div>
+  </div>
+</div>
+<!-- ═══════════════ END TEMA 13 ═══════════════ -->
+
+<!-- ═══════════════ TEMA 14 ═══════════════ -->
+<div class="tema-panel" id="tema14">
+  <div class="tema-hdr">
+    <span class="tema-num">TEMA 14</span>
+    <div>
+      <div class="tema-title">Seguridad activa del vehículo</div>
+      <div class="tema-en">Active / primary vehicle safety systems</div>
+    </div>
+  </div>
+  <div class="intro-box">
+    <strong>¿Qué se examina aquí?</strong> Focus on: what <strong>seguridad activa</strong> means vs pasiva, signs of each failing system, tyre pressure effects (too high vs too low), the <strong>1.6 mm tread rule</strong>, <strong>5-year tyre rule</strong>, brake types and failure modes, and the acronyms of ADAS systems (ABS, ESP, BAS, BSD, LDW, LKA, AEBS, FCW, DADS…). Know what each system does and importantly what it does <em>not</em> do.
+  </div>
+
+  <div class="section">
+    <div class="sec-title">1. Seguridad activa vs pasiva <span class="sec-en">· Active vs passive safety</span></div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Tipo · Type</th><th>Objetivo · Goal</th><th>Ejemplos · Examples</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Seguridad activa</strong> (primaria)<span class="tbl-note">Active / primary safety</span></td>
+            <td><span class="hl">Evitar</span> que ocurra el accidente.<span class="tbl-note">Prevent the accident from happening.</span></td>
+            <td>Sistema de frenado · Suspensión · Ruedas y neumáticos · Alumbrado · Dirección · Limpiaparabrisas · Espejos retrovisores · Parabrisas y elementos transparentes.<span class="tbl-note">Brakes · Suspension · Tyres · Lighting · Steering · Wipers · Mirrors · Windscreen.</span></td>
+          </tr>
+          <tr>
+            <td><strong>Seguridad pasiva</strong> (secundaria)<span class="tbl-note">Passive / secondary safety</span></td>
+            <td><span class="hl">Reducir</span> las lesiones una vez producido el accidente.<span class="tbl-note">Reduce injuries once an accident has occurred.</span></td>
+            <td>Carrocería · Asientos · Reposacabezas · Cinturones · Airbag.<span class="tbl-note">Body · Seats · Headrest · Seatbelts · Airbag.</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">2. Sistema de dirección <span class="sec-en">· Steering system</span></div>
+    <div class="co co-bl">Conjunto de mecanismos que orientan las ruedas según la dirección deseada. La <strong>dirección asistida</strong> minimiza el esfuerzo en el volante.<span class="en">Orients the wheels as the driver wishes. Power steering minimises effort.</span></div>
+    <div class="trap">
+      <div class="trap-lbl">⚠ Señales de avería · Warning signs</div>
+      <p>Desgaste irregular en los neumáticos · Vibración del volante a ciertas velocidades · Sensación de dureza o flojedad excesiva · El vehículo se desvía hacia los lados al soltar el volante en terreno llano.<span class="en">Uneven tyre wear · Wheel vibration at certain speeds · Excessive stiffness or play · Vehicle drifts sideways when wheel released on flat road.</span></p>
+    </div>
+    <div class="co co-gy">Llevar al taller si el vehículo ha sufrido un accidente o la dirección ha recibido un golpe fuerte.<span class="en">Take to a garage if the vehicle has been in an accident or the steering has taken a hard knock.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">3. Sistema de suspensión y amortiguadores <span class="sec-en">· Suspension &amp; shock absorbers</span></div>
+    <div class="co co-bl">La suspensión absorbe las irregularidades del terreno para garantizar la estabilidad, seguridad y confort de los ocupantes. Los <strong>amortiguadores</strong> evitan el efecto <span class="hl">rebote</span> al pasar sobre una irregularidad.<span class="en">Suspension absorbs road irregularities. Shock absorbers prevent the rebound effect when passing over bumps.</span></div>
+    <div class="trap">
+      <div class="trap-lbl">⚠ Efectos de la suspensión en mal estado · Effects of poor suspension</div>
+      <table class="tbl" style="margin-top:.3rem">
+        <tbody>
+          <tr><td>Disminución de la estabilidad del vehículo.<span class="tbl-note">Reduced vehicle stability.</span></td></tr>
+          <tr><td>Disminución del confort; aparición de la fatiga.<span class="tbl-note">Reduced comfort; driver fatigue increases.</span></td></tr>
+          <tr><td>Disminución de la eficacia del <strong>ABS</strong>.<span class="tbl-note">Reduced ABS effectiveness.</span></td></tr>
+          <tr><td>Aumento de la distancia de frenado (especialmente en mojado) y mayor riesgo de <strong>aquaplaning</strong>.<span class="tbl-note">Longer braking distance (especially wet) and higher aquaplaning risk.</span></td></tr>
+          <tr><td>Aumento del riesgo de deslumbrar a otros por las oscilaciones de los faros.<span class="tbl-note">Increased risk of dazzling others due to headlight oscillation.</span></td></tr>
+          <tr><td>Deterioro acelerado de otros elementos.<span class="tbl-note">Accelerated wear on other components.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="co co-am">Amortiguadores en mal estado: al tomar una curva, la carrocería se inclina excesivamente hacia un lado.<span class="en">Faulty shock absorbers: body leans excessively when cornering.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">4. Ruedas y neumáticos <span class="sec-en">· Wheels &amp; tyres</span></div>
+    <div class="co co-bl">Los neumáticos son los únicos elementos en contacto directo con el pavimento — fundamentales para la adherencia. La <strong>banda de rodadura</strong> con sus ranuras evacúa el agua y proporciona adherencia.<span class="en">Tyres are the only elements in contact with the road — critical for grip. The tread channels evacuate water and provide grip.</span></div>
+
+    <div class="card">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Funciones de los neumáticos · Tyre functions</div>
+      <div class="co co-te">• Intervienen en la suspensión (conducción confortable).<span class="en">· Contribute to suspension (comfortable ride).</span></div>
+      <div class="co co-te">• Contribuyen a la estabilidad y seguridad de la marcha.<span class="en">· Contribute to stability and safe travel.</span></div>
+      <div class="co co-te">• Soportan la carga.<span class="en">· Bear the vehicle's load.</span></div>
+      <div class="co co-te">• Influyen significativamente en la <strong>distancia de frenado</strong>.<span class="en">· Significantly affect braking distance.</span></div>
+    </div>
+
+    <div class="card" style="margin-top:.5rem">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Requisitos de los neumáticos · Tyre requirements</div>
+      <div class="co co-am">Profundidad mínima del dibujo en ranuras principales: <span class="hl">1,6 mm</span>.<span class="en">Minimum tread depth in main grooves: 1.6 mm.</span></div>
+      <div class="co co-am">Sustituir cada <span class="hl">5 años</span> (el caucho se endurece y pierde adherencia).<span class="en">Replace every 5 years (rubber hardens and loses grip).</span></div>
+      <div class="co co-am">Sin ampollas, deformaciones, cortes, roturas o cables al descubierto.<span class="en">No blisters, deformations, cuts, breaks or exposed cords.</span></div>
+      <div class="co co-gy">En general: mismo tipo, tamaño y dibujo en todas las ruedas. Diferente dibujo no significa diferente tipo.<span class="en">Generally: same type, size and tread on all wheels. Different tread pattern ≠ different tyre type.</span></div>
+      <div class="co co-re">Prohibido montar neumático sin cámara en llanta diseñada para neumático con cámara. Prohibido montar llantas de distintas dimensiones en el mismo eje.<span class="en">Never mount a tubeless tyre on a tube-type rim. Never fit different rim sizes on the same axle.</span></div>
+    </div>
+
+    <div class="card" style="margin-top:.5rem">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Presión de inflado · Tyre pressure</div>
+      <div class="co co-bl">Comprobar <span class="hl">1 o 2 veces al mes</span>, con los neumáticos <span class="hl">en frío</span>. La rueda de repuesto debe llevar la <strong>presión más alta</strong> de las fijadas por el fabricante.<span class="en">Check 1–2 times per month, with tyres cold. Spare tyre: highest pressure specified by manufacturer.</span></div>
+      <table class="tbl" style="margin-top:.4rem">
+        <thead><tr><th>Presión · Pressure</th><th>Efectos · Effects</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Correcta</strong><span class="tbl-note">Correct</span></td>
+            <td>Buena adherencia · Desgaste homogéneo por toda la banda de rodadura.<span class="tbl-note">Good grip · Even wear across the full tread.</span></td>
+          </tr>
+          <tr>
+            <td><strong>Inferior a la recomendada</strong><span class="tbl-note">Too low</span></td>
+            <td>Deformación · Calentamiento excesivo · Desgaste por los <span class="hl">bordes</span> (flancos/hombros) · Mayor riesgo de reventón · Mayor consumo · Menor adherencia.<span class="tbl-note">Deformation · Overheating · Edge wear · Blowout risk · Higher consumption · Less grip.</span></td>
+          </tr>
+          <tr>
+            <td><strong>Superior a la recomendada</strong><span class="tbl-note">Too high</span></td>
+            <td>Menor zona de contacto · Desgaste por el <span class="hl">centro</span> · No absorbe irregularidades · Deteriora la suspensión/dirección · Favorece la fatiga.<span class="tbl-note">Smaller contact patch · Central wear · Hard ride · Damages suspension/steering · Increases driver fatigue.</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="co co-am">Ruedas desequilibradas: vibración del volante a una determinada velocidad. Causa: pérdida de contrapesos, deformación de llanta, desgaste irregular. Solución: taller (colocación de contrapesos de plomo).<span class="en">Unbalanced wheels: steering wheel vibration at a specific speed. Cause: lost counterweights, deformed rim, uneven wear. Fix: specialist workshop (lead counterweights).</span></div>
+    <div class="co co-gy">Ruedas motrices: reciben la potencia del motor. Tracción = delanteras motrices. Propulsión = traseras motrices. Tracción total = todas motrices. Ruedas directrices: guían la trayectoria.<span class="en">Drive wheels: receive engine power. Front-wheel drive (tracción). Rear-wheel drive (propulsión). Four-wheel drive (tracción total). Steering wheels: guide the trajectory.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">5. Sistema de frenos <span class="sec-en">· Braking system</span></div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Tipo · Type</th><th>Función · Function</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Freno de servicio</strong></td><td>Actúa sobre <strong>todas las ruedas</strong>. Se acciona con el pie derecho (pedal central). Sistema hidráulico — comprobar nivel de líquido (entre Máximo y Mínimo).<span class="tbl-note">Acts on all wheels. Right foot (centre pedal). Hydraulic — check fluid level (between Max and Min).</span></td></tr>
+          <tr><td><strong>Freno de socorro</strong></td><td>Actúa sobre al menos <strong>una rueda de cada lado</strong>. Entra en funcionamiento cuando falla el freno de servicio.<span class="tbl-note">At least one wheel on each side. Activates when service brake fails.</span></td></tr>
+          <tr><td><strong>Freno de estacionamiento</strong></td><td>Actúa generalmente sobre las ruedas <strong>traseras</strong>. Se acciona con la mano, con el vehículo inmovilizado.<span class="tbl-note">Usually rear wheels. Hand-operated, vehicle stationary.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card" style="margin-top:.5rem">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Freno de tambor vs freno de disco · Drum vs disc brakes</div>
+      <table class="tbl">
+        <thead><tr><th>Freno de tambor · Drum</th><th>Freno de disco · Disc</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Tambor + zapatas. Poca ventilación → se calientan más → más susceptibles de bloquear.<span class="tbl-note">Drum + shoes. Poor ventilation → overheat → more prone to locking.</span></td>
+            <td>Disco + pastillas. Al aire libre → evacúa mejor el calor → frenada más suave y progresiva. Más eficaz.<span class="tbl-note">Disc + pads. Exposed → better heat dissipation → smoother progressive braking. More effective.</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="trap">
+      <div class="trap-lbl">⚠ Causas de fallo de frenos · Brake failure causes</div>
+      <table class="tbl" style="margin-top:.3rem">
+        <thead><tr><th>Causa · Cause</th><th>Síntoma · Symptom</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Pérdida de líquido de frenos</strong></td><td>El pedal llega casi al fondo.<span class="tbl-note">Pedal goes almost to the floor.</span></td></tr>
+          <tr><td><strong>Entrada de aire en las canalizaciones</strong></td><td>Tacto esponjoso y blando al final del recorrido.<span class="tbl-note">Spongy/soft feel at end of pedal travel.</span></td></tr>
+          <tr><td><strong>Fading</strong> (calentamiento excesivo)</td><td>Frenadas continuas y excesivas. Pérdida de eficacia progresiva.<span class="tbl-note">Continuous/excessive braking. Progressive loss of effectiveness.</span></td></tr>
+          <tr><td><strong>Humedad excesiva</strong> (lluvia)</td><td>Pérdida de eficacia. Solución: accionar el pedal poco a poco y repetidas veces para evaporar el agua.<span class="tbl-note">Loss of effectiveness. Fix: pump the pedal gently to evaporate water.</span></td></tr>
+          <tr><td><strong>Acción desigual de frenos</strong></td><td>El vehículo se desvía hacia un lado al frenar. Causa: presión desigual en neumáticos del mismo eje, desgaste desigual de pastillas/zapatas, o mal reglaje.<span class="tbl-note">Vehicle pulls to one side when braking. Cause: unequal tyre pressure, uneven pad/shoe wear, or poor adjustment.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">6. Sistemas ADAS de asistencia activa <span class="sec-en">· Advanced Driver Assistance Systems</span></div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Sigla · Acronym</th><th>Nombre español · Spanish name</th><th>Qué hace · What it does</th></tr></thead>
+        <tbody>
+          <tr><td><strong>ABS</strong></td><td>Sistema antibloqueo de frenos</td><td>Evita que las ruedas se bloqueen al frenar con excesiva presión. Conserva la trayectoria. Al activarse, el pedal tiembla ligeramente — <span class="hl-re">no levantar el pie</span>.<span class="tbl-note">Prevents wheel lock-up under heavy braking. Maintains steering. Pedal vibrates when active — do NOT lift foot.</span></td></tr>
+          <tr><td><strong>BAS</strong></td><td>Sistema de asistencia a la frenada</td><td>Detecta una frenada de emergencia y aplica toda la fuerza necesaria aunque el conductor no ejerza suficiente presión.<span class="tbl-note">Detects emergency braking and applies full force even if driver doesn't press hard enough.</span></td></tr>
+          <tr><td><strong>ESP</strong></td><td>Control electrónico de estabilidad</td><td>Detecta derrape en algún eje en curva; regula el frenado y la tracción rueda a rueda. Menos accidentes en curvas.<span class="tbl-note">Detects axle skid in curves; regulates braking/traction per wheel. Fewer curve accidents.</span></td></tr>
+          <tr><td><strong>ASR / TCS</strong></td><td>Control de tracción</td><td>Detecta si las ruedas motrices pierden adherencia; reduce la fuerza del motor y frena las ruedas que patinan.<span class="tbl-note">Detects drive wheel slip; reduces engine power and brakes slipping wheels.</span></td></tr>
+          <tr><td><strong>AEBS</strong></td><td>Frenado autónomo de emergencia</td><td>Detecta peligro inminente de colisión: avisa al conductor (visual/acústica) y, si no actúa, frena el vehículo automáticamente.<span class="tbl-note">Detects imminent collision: warns driver (visual/acoustic) then brakes automatically if no response.</span></td></tr>
+          <tr><td><strong>FCW</strong></td><td>Advertencia de colisión frontal</td><td>Alerta al conductor (óptica y acústica) cuando no se mantiene la distancia de seguridad. <span class="hl-re">Solo avisa — no frena por sí solo.</span><span class="tbl-note">Warns driver (optical + acoustic) when safety distance not maintained. Warning ONLY — does NOT brake.</span></td></tr>
+          <tr><td><strong>RCTA</strong></td><td>Alerta de tráfico cruzado trasero</td><td>Supervisa el tráfico trasero transversal al salir marcha atrás. Avisa si detecta vehículo a ~20 m. Algunos pueden frenar por sí solos si la colisión es inminente.<span class="tbl-note">Monitors cross-traffic when reversing. Warns if vehicle detected ~20 m away. Some models brake automatically.</span></td></tr>
+          <tr><td><strong>BSD</strong></td><td>Detección de ángulos muertos</td><td>Detecta vehículo en el ángulo muerto lateral; enciende el indicador óptico del espejo correspondiente de forma intermitente (+ posible aviso acústico).<span class="tbl-note">Detects vehicle in lateral blind spot; flashes mirror indicator (+ possible acoustic warning).</span></td></tr>
+          <tr><td><strong>PCW</strong></td><td>Advertencia de colisión con peatones</td><td>Detecta peatón o ciclista a baja velocidad (hasta 50 km/h). Cuando tiempo de colisión &lt; 2 segundos: emite aviso óptico o acústico.<span class="tbl-note">Detects pedestrian/cyclist at low speed (up to 50 km/h). When time to collision &lt;2 sec: visual/acoustic warning.</span></td></tr>
+          <tr><td><strong>IHC</strong></td><td>Control inteligente de luces largas</td><td>Cambia automáticamente entre luces largas y cortas según las condiciones. Evita el deslumbramiento de otros conductores.<span class="tbl-note">Automatically switches between high and low beams. Prevents dazzling other drivers.</span></td></tr>
+          <tr><td><strong>DADS</strong></td><td>Detección de fatiga del conductor</td><td>Analiza patrones de conducción; emite alerta (óptica, acústica o háptica) cuando detecta maniobras atípicas por sueño o fatiga. Recomienda realizar una pausa.<span class="tbl-note">Analyzes driving patterns; alerts driver (optical, acoustic or haptic) on detecting fatigue-type manoeuvres. Recommends a break.</span></td></tr>
+          <tr><td><strong>LDW</strong></td><td>Alerta de salida de carril</td><td>Reconoce líneas de carril; alerta si el vehículo las sobrepasa sin usar el intermitente (acción involuntaria).<span class="tbl-note">Recognises lane markings; alerts if vehicle crosses them without indicating (assumed involuntary).</span></td></tr>
+          <tr><td><strong>LKA</strong></td><td>Asistencia de mantenimiento de carril</td><td>Igual que LDW, pero si el conductor no responde, <strong>actúa sobre la dirección</strong> para corregir la trayectoria.<span class="tbl-note">Like LDW, but if driver doesn't respond, actively steers to correct course.</span></td></tr>
+          <tr><td><strong>EBD</strong></td><td>Aviso de frenada de emergencia</td><td>Evita colisiones por alcance; detecta frenada brusca del vehículo de delante y avisa al conductor de detrás.<span class="tbl-note">Prevents rear-end collisions; detects hard braking of vehicle ahead and warns following driver.</span></td></tr>
+          <tr><td><strong>E-CALL</strong></td><td>Sistema de llamada de emergencia</td><td>Se activa automáticamente al saltar los airbags; contacta con el 112 con prioridad máxima. También puede activarse manualmente.<span class="tbl-note">Activates automatically when airbags deploy; contacts 112 with maximum priority. Can also be activated manually.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="co co-am">Otros sistemas: Limitadores y cruceros de velocidad · Start-stop automático · Hill holder (asistencia en pendientes) · Activación automática de alumbrado y limpiaparabrisas · Cámaras (360°).<span class="en">Other systems: Speed limiters/cruise control · Auto start-stop · Hill holder · Auto lighting/wipers · 360° cameras.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">7. Alumbrado, parabrisas y retrovisores <span class="sec-en">· Lighting, windscreen &amp; mirrors</span></div>
+    <div class="co co-bl">Finalidad del alumbrado: <strong>ver, ser vistos y advertir las maniobras</strong>. Con luces mal regladas (orientadas demasiado abajo), a 90 km/h se tarda 1 segundo más en percibir un obstáculo → se recorren 25 metros adicionales.<span class="en">Lighting purpose: see, be seen, signal manoeuvres. Poorly aimed lights at 90 km/h: 1 extra second to perceive an obstacle = 25 extra metres.</span></div>
+    <div class="co co-gy">Lámparas de xenón (descarga de gas): doble de luz con la mitad de energía. Color azulado. Reducen la fatiga ocular. Luces adaptativas: adaptan la zona iluminada a las necesidades (curvas, intersecciones). Luces de día (daylights): aumentan la visibilidad diurna; estimadas en salvar ~200 vidas/año.<span class="en">Xenon (gas discharge): double light at half energy. Bluish hue. Less eye fatigue. Adaptive lights: adjust to curves, junctions. Daytime running lights: increase daytime visibility; estimated to save ~200 lives/year.</span></div>
+    <div class="co co-re">Prohibidas láminas adhesivas en el parabrisas (salvo excepciones reglamentarias). Los elementos transparentes no deben deformar objetos ni confundir colores de señalización.<span class="en">Adhesive films on windscreen prohibited (except as regulated). Transparent elements must not distort objects or confuse signal colours.</span></div>
+    <div class="co co-am">Limpiaparabrisas: no usar con el parabrisas seco (rayaría el cristal y deterioraría las escobillas). Cambiar las escobillas cuando hagan ruido, dejen zonas sin limpiar o vibren.<span class="en">Wipers: don't use on a dry windscreen. Replace blades when they make noise, leave streaks, or vibrate.</span></div>
+    <div class="co co-bl">Luneta térmica (cristal trasero): filamentos eléctricos que eliminan el vaho o la escarcha del cristal trasero. Siempre limpiar la escarcha del exterior antes de arrancar.<span class="en">Heated rear window: electric filaments remove condensation/frost from rear screen. Always clear exterior frost before driving.</span></div>
+    <div class="card" style="margin-top:.5rem">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Espejos retrovisores · Rear-view mirrors</div>
+      <div class="co co-bl">Turismos y camiones ≤3.500 kg: obligatorio espejo izquierdo exterior + espejo interior. Espejo derecho exterior: opcional (obligatorio si el interior no ofrece el campo de visión reglamentario).<span class="en">Cars and vans ≤3500 kg: left exterior + interior mirror mandatory. Right exterior: optional (mandatory if interior doesn't meet field-of-vision requirements).</span></div>
+      <div class="co co-am">Campo de visión del espejo interior: al menos una parte de carretera plana desde el horizonte hasta <span class="hl">60 m</span> por detrás de los puntos oculares y en una anchura de <span class="hl">20 m</span>.<span class="en">Interior mirror field: at least a portion of flat road from horizon to 60 m behind the driver's eye point and 20 m wide.</span></div>
+      <div class="co co-gy">Espejos convexos: mayor ángulo de visión, pero los vehículos parecen más pequeños y más alejados de lo real.<span class="en">Convex mirrors: wider view, but vehicles appear smaller and farther than they are.</span></div>
+      <div class="co co-te">Mirar retrovisores con frecuencia y brevedad. Recomendado: cada <span class="hl">5 s</span> en vías urbanas/carreteras densas, cada <span class="hl">10 s</span> en carreteras sin tráfico, cada <span class="hl">15 s</span> en autopistas/autovías.<span class="en">Check mirrors frequently and briefly: every 5 s in urban/dense roads, every 10 s on quiet roads, every 15 s on motorways.</span></div>
+      <div class="co co-am">Ángulo muerto: antes de maniobrar, girar la cabeza hasta <span class="hl">45 grados</span> para controlar los espacios no visibles por los espejos.<span class="en">Blind spot: before manoeuvring, turn head up to 45° to check spaces not visible in mirrors.</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Vocabulario clave <span class="sec-en">· Key vocabulary</span></div>
+    <div class="vocab-grid">
+      <div class="vocab-item"><div class="vocab-es">seguridad activa / primaria</div><div class="vocab-en">active / primary safety</div></div>
+      <div class="vocab-item"><div class="vocab-es">seguridad pasiva / secundaria</div><div class="vocab-en">passive / secondary safety</div></div>
+      <div class="vocab-item"><div class="vocab-es">banda de rodadura</div><div class="vocab-en">tyre tread</div></div>
+      <div class="vocab-item"><div class="vocab-es">amortiguador</div><div class="vocab-en">shock absorber</div></div>
+      <div class="vocab-item"><div class="vocab-es">rebote</div><div class="vocab-en">rebound / bounce effect</div></div>
+      <div class="vocab-item"><div class="vocab-es">llanta</div><div class="vocab-en">rim / wheel rim</div></div>
+      <div class="vocab-item"><div class="vocab-es">pastillas / zapatas</div><div class="vocab-en">brake pads / brake shoes</div></div>
+      <div class="vocab-item"><div class="vocab-es">fading</div><div class="vocab-en">brake fade (overheating)</div></div>
+      <div class="vocab-item"><div class="vocab-es">derrape / patinazo</div><div class="vocab-en">skid / slide</div></div>
+      <div class="vocab-item"><div class="vocab-es">ángulo muerto</div><div class="vocab-en">blind spot</div></div>
+      <div class="vocab-item"><div class="vocab-es">luneta térmica</div><div class="vocab-en">heated rear window</div></div>
+      <div class="vocab-item"><div class="vocab-es">dirección asistida</div><div class="vocab-en">power steering</div></div>
+    </div>
+  </div>
+</div>
+<!-- ═══════════════ END TEMA 14 ═══════════════ -->
+
+<!-- ═══════════════ TEMA 15 ═══════════════ -->
+<div class="tema-panel" id="tema15">
+  <div class="tema-hdr">
+    <span class="tema-num">TEMA 15</span>
+    <div>
+      <div class="tema-title">Mecánica del vehículo, conducción eficiente y equipamiento obligatorio</div>
+      <div class="tema-en">Vehicle mechanics, fuel-efficient driving &amp; mandatory equipment</div>
+    </div>
+  </div>
+  <div class="intro-box">
+    <strong>¿Qué se examina aquí?</strong> Key numbers: gear change RPMs (<strong>2000–2500 gasolina / 1500–2000 diésel</strong>), speed at which to change up (2nd at 6 m/2 s, 3rd at 30 km/h, 4th at 40, 5th at 50–60), <strong>10–25% fuel saving</strong> with efficient driving, <strong>50–80% fewer emissions</strong>. Also: mandatory equipment for turismos (V-16, repuesto/kit, chaleco), catalytic converter precautions, and how the engine/battery/lubrication work.
+  </div>
+
+  <div class="section">
+    <div class="sec-title">1. Motor térmico <span class="sec-en">· Thermal engine</span></div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Tipo · Type</th><th>Funcionamiento · How it works</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Motor de explosión</strong> (gasolina)<span class="tbl-note">Petrol / gasoline</span></td><td>Combustión de gasolina inyectada, provocada por una chispa eléctrica.<span class="tbl-note">Petrol injection ignited by an electric spark.</span></td></tr>
+          <tr><td><strong>Motor de combustión</strong> (Diésel)<span class="tbl-note">Diesel</span></td><td>Gasóleo inyectado a alta presión arde espontáneamente (sin chispa).<span class="tbl-note">Diesel injected at high pressure ignites spontaneously (no spark).</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="co co-bl">En ambos motores, el <strong>filtro de aire</strong> limpia el aire antes de que llegue a los cilindros. Si está obstruido, las impurezas dañan y desgastan prematuramente los cilindros. Revisar con mayor frecuencia en verano.<span class="en">In both types, the air filter cleans air before it reaches the cylinders. If blocked, particles damage the cylinders. Check more often in summer.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">2. Sistema eléctrico: alternador y batería <span class="sec-en">· Electrical system: alternator &amp; battery</span></div>
+    <div class="co co-bl"><strong>Alternador:</strong> produce energía eléctrica cuando el motor está en marcha (a alto y bajo régimen de revoluciones).<span class="en">Alternator: generates electricity while engine runs (at high and low RPM).</span></div>
+    <div class="co co-bl"><strong>Batería:</strong> almacena la energía del alternador para suministrar corriente al motor de arranque, sistema de encendido, alumbrado y equipamiento eléctrico.<span class="en">Battery: stores alternator energy to supply starter motor, ignition, lighting and all electrical equipment.</span></div>
+    <div class="card">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Mantenimiento de la batería · Battery maintenance</div>
+      <div class="co co-te">• Comprobar el nivel del electrolito; añadir solo <strong>agua destilada</strong> si no cubre las placas.<span class="en">· Check electrolyte level; add only distilled water if it doesn't cover the plates.</span></div>
+      <div class="co co-te">• Limpiar sulfataciones de los bornes; protegerlos con grasa o vaselina; apretar conexiones.<span class="en">· Clean corrosion from terminals; protect with grease/vaseline; tighten connections.</span></div>
+    </div>
+    <div class="trap">
+      <div class="trap-lbl">⚠ Síntomas de batería baja o averiada · Symptoms of a weak/faulty battery</div>
+      <p>Los primeros giros del motor se realizan con dificultad y poca fuerza · Las luces del vehículo tienden a apagarse.<span class="en">Engine cranks slowly and weakly · Vehicle lights tend to dim or go out.</span></p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">3. Lubricación y refrigeración <span class="sec-en">· Lubrication &amp; cooling</span></div>
+    <div class="co co-bl"><strong>Aceite:</strong> interpone una película entre las piezas en rozamiento → reduce desgaste y corrosión, contribuye a la refrigeración. Nivel entre <span class="hl">Máximo y Mínimo</span> de la varilla indicadora (comprobar con motor parado y en frío, en posición horizontal). Testigo <span class="hl-re">rojo</span> en el salpicadero si el nivel está por debajo del mínimo.<span class="en">Oil: film between moving parts → reduces wear, corrosion and aids cooling. Level between Max and Min on dipstick (check engine cold, stopped, on level ground). Red warning light if below minimum.</span></div>
+    <div class="co co-am">Cambio de aceite: con vehículo en horizontal (para vaciado) y motor parado <strong>en caliente</strong>. Seguir las recomendaciones del fabricante.<span class="en">Oil change: vehicle level (for draining) and engine stopped while still warm. Follow manufacturer's recommendations.</span></div>
+    <div class="co co-bl"><strong>Líquido refrigerante:</strong> mezcla de agua y anticongelante que circula por el motor para evacuar el calor. Nivel entre Máximo y Mínimo del vaso de expansión. Sin líquido refrigerante → motor se calienta excesivamente → avería grave (gripaje).<span class="en">Coolant: water + antifreeze mixture circulates through engine. Level between Max and Min in expansion tank. Without coolant → overheating → serious damage (seizure).</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">4. Mandos del vehículo <span class="sec-en">· Vehicle controls</span></div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Mando · Control</th><th>Función · Function</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Volante</strong></td><td>Coger con ambas manos, brazos semiflexionados. Posición: las 10 y 10 (dos menos diez / tres menos cuarto). No cruzar brazos ni coger por los radios. Al quitar la llave y mover el volante → se bloquea la dirección.<span class="tbl-note">Both hands, arms slightly bent. Position: 10 &amp; 10 (ten-to-two / quarter-to-three). Don't cross arms or grip spokes. Removing key while turning wheel locks the steering.</span></td></tr>
+          <tr><td><strong>Palanca de cambios</strong></td><td>Selecciona la marcha. Para ahorrar combustible: circular en marchas largas siempre que sea posible.<span class="tbl-note">Selects gear. To save fuel: use high gears whenever possible.</span></td></tr>
+          <tr><td><strong>Freno de estacionamiento</strong></td><td>Entre los asientos delanteros (generalmente). Mantiene el vehículo inmóvil, incluso en pendiente. Accionar con el vehículo inmovilizado.<span class="tbl-note">Usually between front seats. Keeps vehicle stationary, even on slopes. Apply only when stopped.</span></td></tr>
+          <tr><td><strong>Embrague</strong> (izquierda)</td><td>Acopla/desacopla el motor de la caja de cambios. A fondo → discos separados (motor desembragado). Levantado → discos unidos (motor embragado). No usar si no es estrictamente necesario.<span class="tbl-note">Couples/decouples engine from gearbox. Fully pressed → disengaged. Released → engaged. Don't ride the clutch unnecessarily.</span></td></tr>
+          <tr><td><strong>Freno de servicio</strong> (centro)</td><td>Pie derecho. Actúa sobre todas las ruedas. Frenar con suavidad normalmente. En emergencia: a fondo de forma continuada, sin bloquear las ruedas.<span class="tbl-note">Right foot. All wheels. Normally: brake gently. Emergency: full continuous pressure, avoiding wheel lock.</span></td></tr>
+          <tr><td><strong>Acelerador</strong> (derecha)</td><td>Pie derecho. Aumentar la presión → más revoluciones, más potencia y velocidad.<span class="tbl-note">Right foot. More pressure → higher RPM, more power and speed.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">5. Conducción económica / eficiente <span class="sec-en">· Eco-driving / fuel-efficient driving</span></div>
+    <div class="co co-te">Objetivo: reducir el consumo de combustible, los gastos de mantenimiento y la contaminación, y <strong>aumentar la seguridad</strong>.<span class="en">Goal: reduce fuel consumption, maintenance costs and pollution — and INCREASE safety.</span></div>
+    <div class="co co-te">Las técnicas de conducción eficiente permiten reducir el consumo entre un <span class="hl">10 y 25%</span> y las emisiones contaminantes entre un <span class="hl">50 y 80%</span>.<span class="en">Efficient driving techniques can cut fuel consumption 10–25% and pollutant emissions 50–80%.</span></div>
+
+    <div class="card">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Técnicas clave · Key techniques</div>
+      <table class="tbl">
+        <thead><tr><th>Técnica · Technique</th><th>Detalle · Detail</th></tr></thead>
+        <tbody>
+          <tr><td>Cambio de marchas al régimen correcto</td><td>Gasolina: <span class="hl">2.000–2.500 rpm</span>. Diésel: <span class="hl">1.500–2.000 rpm</span>. 2ª a los 2 s o 6 m · 3ª desde 30 km/h · 4ª desde 40 km/h · 5ª desde 50 km/h (pequeña cilindrada) o 60 km/h (mediana).<span class="tbl-note">Petrol: 2000–2500 rpm. Diesel: 1500–2000 rpm. 2nd after 2 sec or 6 m · 3rd from 30 km/h · 4th from 40 · 5th from 50 (small cc) or 60 (medium cc).</span></td></tr>
+          <tr><td>Circular en marchas largas</td><td>5ª o 6ª → bajas revoluciones → menor consumo.<span class="tbl-note">5th or 6th gear → low RPM → less fuel.</span></td></tr>
+          <tr><td>Velocidad uniforme</td><td>Evitar acelerones y frenadas bruscas. La velocidad es el principal factor de aumento del consumo.<span class="tbl-note">Avoid harsh acceleration and braking. Speed is the main driver of increased consumption.</span></td></tr>
+          <tr><td>Arranque correcto</td><td>Gasolina: iniciar la marcha inmediatamente con suavidad. Diésel: esperar unos segundos antes de circular.<span class="tbl-note">Petrol: move off immediately, gently. Diesel: wait a few seconds before driving.</span></td></tr>
+          <tr><td>No usar el embrague innecesariamente</td><td>A &gt;20 km/h con marcha engranada y sin pisar embrague ni acelerador: consumo de combustible <span class="hl">nulo</span>.<span class="tbl-note">At &gt;20 km/h, in gear, foot off clutch and accelerator: fuel consumption = zero.</span></td></tr>
+          <tr><td>Parar el motor</td><td>En detenciones prolongadas. No bajar pendientes en punto muerto.<span class="tbl-note">Stop engine during long waits. Never coast downhill in neutral.</span></td></tr>
+          <tr><td>Temperatura del habitáculo</td><td>Regular entre <span class="hl">20 y 23 °C</span>.<span class="tbl-note">Set cabin temperature to 20–23 °C.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="co co-am">Factores que aumentan el consumo: ventanillas abiertas · carga excesiva o en la baca · baca instalada sin carga · aire acondicionado · alumbrado encendido (hasta +2%). Presión de neumáticos baja también aumenta el consumo.<span class="en">Factors increasing consumption: open windows · excess load or roof rack load · empty roof rack · air conditioning · lights on (up to +2%). Low tyre pressure also increases consumption.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">6. Catalizador y contaminación <span class="sec-en">· Catalytic converter &amp; pollution</span></div>
+    <div class="co co-te">El catalizador convierte gases contaminantes del motor en gases depurados mediante oxidación y reducción. Reduce la contaminación en más de un <span class="hl">90%</span>.<span class="en">The catalytic converter converts engine pollutants to clean gases via oxidation and reduction. Reduces pollution by over 90%.</span></div>
+    <div class="trap">
+      <div class="trap-lbl">⚠ Si el vehículo tiene catalizador · If the vehicle has a catalytic converter</div>
+      <table class="tbl" style="margin-top:.3rem">
+        <tbody>
+          <tr><td>No usar <strong>gasolina con plomo</strong>.</td></tr>
+          <tr><td>Evitar que el motor consuma demasiado aceite.</td></tr>
+          <tr><td>No arrancar el motor <strong>empujando el vehículo</strong>.</td></tr>
+          <tr><td>No estacionar sobre superficies combustibles (el catalizador alcanza temperaturas muy altas → riesgo de incendio).</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="co co-re">Prohibido que los vehículos lancen humos por el tubo de escape que resulten nocivos o dificulten la visibilidad. Los agentes pueden inmovilizar el vehículo si supera los niveles de gases, humos o ruidos permitidos.<span class="en">Vehicles may not emit harmful or visibility-reducing exhaust smoke. Officers may immobilise vehicle if emissions or noise exceed legal limits.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">7. Equipamiento obligatorio de los turismos <span class="sec-en">· Mandatory equipment for cars</span></div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Elemento · Item</th><th>Detalle · Detail</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Dispositivo V-16</strong> (preseñalización de peligro)</td><td>Obligatorio. Color amarillo auto. Colocar en la parte más alta posible del vehículo inmovilizado.<span class="tbl-note">Mandatory. Auto-yellow colour. Place as high as possible on the immobilised vehicle.</span></td></tr>
+          <tr><td><strong>Rueda de repuesto</strong> o alternativa</td><td>Rueda completa de repuesto o rueda de uso temporal, con las herramientas necesarias, o sistema alternativo con suficientes garantías. Respetar las limitaciones de velocidad del alternativo.<span class="tbl-note">Full spare wheel, or temporary-use spare + tools, or alternative system. Observe any speed limitations for the alternative.</span></td></tr>
+          <tr><td><strong>Chaleco reflectante</strong></td><td>Llevarlo en el <strong>habitáculo</strong> (no en el maletero). Colores: amarillo, naranja o rojo. Visible a <span class="hl">150 m</span> como mínimo. Obligatorio ponérselo <strong>antes de salir del vehículo</strong> cuando se ocupa la calzada o arcén en vías interurbanas (de día o de noche). Obligatorio uno; recomendable dos.<span class="tbl-note">Keep in cabin (not boot). Yellow/orange/red. Visible at 150 m min. Must be put on BEFORE exiting vehicle on interurban roads (day or night). One required; two recommended.</span></td></tr>
+          <tr><td><strong>Extintor</strong> (conjuntos de vehículos)</td><td>Los conjuntos de vehículos, independientemente de su masa, deben llevar un equipo homologado de extinción de incendios.<span class="tbl-note">Vehicle combinations, regardless of mass, must carry an approved fire extinguisher.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Vocabulario clave <span class="sec-en">· Key vocabulary</span></div>
+    <div class="vocab-grid">
+      <div class="vocab-item"><div class="vocab-es">motor de explosión</div><div class="vocab-en">petrol / spark-ignition engine</div></div>
+      <div class="vocab-item"><div class="vocab-es">motor Diésel / combustión</div><div class="vocab-en">diesel / compression-ignition engine</div></div>
+      <div class="vocab-item"><div class="vocab-es">alternador</div><div class="vocab-en">alternator</div></div>
+      <div class="vocab-item"><div class="vocab-es">batería</div><div class="vocab-en">battery</div></div>
+      <div class="vocab-item"><div class="vocab-es">cárter</div><div class="vocab-en">sump / oil pan</div></div>
+      <div class="vocab-item"><div class="vocab-es">varilla indicadora</div><div class="vocab-en">dipstick</div></div>
+      <div class="vocab-item"><div class="vocab-es">vaso de expansión</div><div class="vocab-en">coolant expansion tank</div></div>
+      <div class="vocab-item"><div class="vocab-es">catalizador</div><div class="vocab-en">catalytic converter</div></div>
+      <div class="vocab-item"><div class="vocab-es">resistencia aerodinámica</div><div class="vocab-en">aerodynamic drag</div></div>
+      <div class="vocab-item"><div class="vocab-es">conducción eficiente</div><div class="vocab-en">eco-driving / efficient driving</div></div>
+      <div class="vocab-item"><div class="vocab-es">chaleco reflectante</div><div class="vocab-en">high-visibility reflective vest</div></div>
+      <div class="vocab-item"><div class="vocab-es">gripaje</div><div class="vocab-en">engine seizure</div></div>
+    </div>
+  </div>
+</div>
+<!-- ═══════════════ END TEMA 15 ═══════════════ -->
+
+<!-- ═══════════════ TEMA 16 ═══════════════ -->
+<div class="tema-panel" id="tema16">
+  <div class="tema-hdr">
+    <span class="tema-num">TEMA 16</span>
+    <div>
+      <div class="tema-title">El factor humano: visión, fatiga, alcohol, drogas y medicamentos</div>
+      <div class="tema-en">The human factor: vision, fatigue, alcohol, drugs &amp; medication</div>
+    </div>
+  </div>
+  <div class="intro-box">
+    <strong>¿Qué se examina aquí?</strong> Critical numbers: field of vision at each speed (104° at 35 km/h → 30° at 130 km/h), reaction time (normal 0.75 s), alcohol limits (0.5 g/l general / 0.3 g/l novices &amp; professionals), the <strong>10-minute gap</strong> between breath tests, the <strong>fatigue break rule</strong> (20–30 min every 2 hours or 200 km), and effects of heat (35°C inside = 0.5 g/l equivalent). Know FCW vs AEBS distinction.
+  </div>
+
+  <div class="section">
+    <div class="sec-title">1. La visión en la conducción <span class="sec-en">· Vision while driving</span></div>
+    <div class="co co-bl">El 90% de la información que recibe el conductor es visual. El campo visual se reduce drásticamente con la velocidad.<span class="en">90% of driving information is visual. Visual field narrows dramatically with speed.</span></div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Velocidad · Speed</th><th>Campo visual · Field of vision</th></tr></thead>
+        <tbody>
+          <tr><td>Detenido · Stopped</td><td><span class="hl">140°</span></td></tr>
+          <tr><td>35 km/h</td><td><span class="hl">104°</span></td></tr>
+          <tr><td>65 km/h</td><td><span class="hl">70°</span></td></tr>
+          <tr><td>100 km/h</td><td><span class="hl">42°</span></td></tr>
+          <tr><td>130 km/h</td><td><span class="hl">30°</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="trap">
+      <div class="trap-lbl">⚠ Efecto túnel · Tunnel vision</div>
+      <p>Cuando la reducción del campo visual alcanza el <span class="hl">70%</span>, el conductor centra la visión en el frontal de la vía y deja de percibir los elementos laterales.<span class="en">When field of vision is reduced by 70%, the driver focuses only on what's directly ahead and stops perceiving lateral elements.</span></p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">2. Tiempo y distancias de reacción y frenado <span class="sec-en">· Reaction time, distances</span></div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Concepto · Concept</th><th>Definición · Definition</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Tiempo de reacción</strong></td><td>Tiempo desde que se percibe el obstáculo hasta que se responde. Normal: <span class="hl">0,75 s</span> (oscila entre 0,5 y 1 s). Aumenta con sueño, alcohol, drogas, cansancio, preocupaciones.<span class="tbl-note">Time from perceiving obstacle to responding. Normal: 0.75 s (0.5–1 s range). Increases with sleep, alcohol, drugs, fatigue, worry.</span></td></tr>
+          <tr><td><strong>Distancia de reacción</strong></td><td>Metros recorridos durante el tiempo de reacción. Depende del tiempo de reacción y de la velocidad.<span class="tbl-note">Metres covered during reaction time. Depends on reaction time and speed.</span></td></tr>
+          <tr><td><strong>Distancia de frenado</strong></td><td>Metros desde que empieza a frenar hasta que el vehículo queda detenido. Influyen: velocidad, carga, eficacia de los frenos, neumáticos, suspensión (mal estado → puede incrementar la distancia de frenado hasta un <span class="hl">50%</span>).<span class="tbl-note">Metres from braking start to full stop. Affected by: speed, load, brake efficiency, tyres, suspension (poor condition → up to 50% longer).</span></td></tr>
+          <tr><td><strong>Distancia de detención / parada técnica</strong></td><td>Distancia de reacción + distancia de frenado. Ejemplo a 80 km/h: 24 m (reacción) + 32 m (frenado) = <span class="hl">56 m</span>.<span class="tbl-note">Reaction distance + braking distance. Example at 80 km/h: 24 m + 32 m = 56 m.</span></td></tr>
+          <tr><td><strong>Distancia frontal de seguridad</strong></td><td>El doble de la distancia de reacción (norma general). A 80 km/h: reacción 24 m → distancia de seguridad ≈ <span class="hl">48 m</span>.<span class="tbl-note">Twice the reaction distance (general rule). At 80 km/h: reaction 24 m → safety distance ≈ 48 m.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">3. Fatiga y sueño <span class="sec-en">· Fatigue &amp; drowsiness</span></div>
+    <div class="co co-am">La fatiga puede aparecer a partir de los <span class="hl">30 minutos</span> de conducción. Síntomas: movimientos constantes en el asiento, molestias en nuca/espalda, aumento del parpadeo, pesadez en los ojos.<span class="en">Fatigue can appear after just 30 minutes of driving. Symptoms: fidgeting, neck/back discomfort, increased blinking, heavy eyelids.</span></div>
+    <div class="co co-re">Efectos de la fatiga: disminución de atención y concentración · movimientos más lentos y menos precisos · aumento del tiempo de reacción · mayor agresividad e irritabilidad.<span class="en">Effects: reduced attention/concentration · slower/less precise movements · longer reaction time · increased aggression and irritability.</span></div>
+    <div class="card">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Para combatir la fatiga · To combat fatigue</div>
+      <div class="co co-te">• Descansar <span class="hl">20–30 minutos</span> cada <span class="hl">2 horas</span> de conducción o cada <span class="hl">200 km</span>.<span class="en">· Rest 20–30 min every 2 hours or 200 km.</span></div>
+      <div class="co co-te">• Durante el descanso: paseo, estirar las piernas, respirar aire puro, ejercicio, dormir si es necesario.<span class="en">· During breaks: walk, stretch, fresh air, exercise, sleep if needed.</span></div>
+      <div class="co co-te">• Mantener el habitáculo ventilado y a temperatura adecuada. Exceso de calefacción favorece el sueño.<span class="en">· Keep cabin ventilated and at a suitable temperature. Too much heat promotes drowsiness.</span></div>
+      <div class="co co-te">• Evitar conducir si no se está suficientemente descansado.<span class="en">· Don't drive when insufficiently rested.</span></div>
+    </div>
+    <div class="co co-am">El sueño está relacionado con entre el <span class="hl">15 y el 30%</span> de la accidentalidad vial. Mayor riesgo: entre las <span class="hl">3 y las 5 de la mañana</span> y entre las <span class="hl">2 y las 4 de la tarde</span>. Los microsueños son fracciones de segundos de sueño involuntario sin que el conductor sea consciente.<span class="en">Drowsiness linked to 15–30% of road accidents. Highest risk: 3–5 AM and 2–4 PM. Micro-sleeps are involuntary fractions of sleep the driver isn't aware of.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">4. El alcohol <span class="sec-en">· Alcohol</span></div>
+    <div class="co co-re">El alcohol es la principal causa de accidentes de tráfico: entre el <span class="hl">30 y 50%</span> de los accidentes están relacionados con el alcohol. Cerca del <span class="hl">40%</span> de los conductores fallecidos tenía una tasa &gt;0,3 g/l.<span class="en">Alcohol is the main cause of traffic accidents: 30–50% linked to alcohol. ~40% of fatally injured drivers had rates above 0.3 g/l.</span></div>
+    <div class="card">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Tasas máximas de alcoholemia · Maximum blood alcohol limits</div>
+      <table class="tbl">
+        <thead><tr><th>Grupo · Group</th><th>Sangre · Blood (g/l)</th><th>Aire espirado · Breath (mg/l)</th></tr></thead>
+        <tbody>
+          <tr><td>Conductores en general (incluidos ciclistas)</td><td><span class="hl">0,5</span></td><td><span class="hl">0,25</span></td></tr>
+          <tr><td>Conductores noveles (&lt;2 años de permiso) y conductores profesionales</td><td><span class="hl">0,3</span></td><td><span class="hl">0,15</span></td></tr>
+          <tr><td>Conductores <strong>menores de edad</strong></td><td><span class="hl-re">0,0</span></td><td><span class="hl-re">0,0</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="co co-bl">La única tasa segura para conducir es <span class="hl">CERO</span>. Aunque sean pequeñas cantidades, el alcohol siempre disminuye las capacidades para conducir.<span class="en">The only safe level for driving is ZERO. Even small amounts always impair driving ability.</span></div>
+    <div class="card" style="margin-top:.5rem">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Efectos del alcohol en la conducción · Effects of alcohol on driving</div>
+      <div class="co co-re">• Falsa sensación de euforia, seguridad y confianza → mayor riesgo asumido.<span class="en">· False sense of euphoria/confidence → more risk-taking.</span></div>
+      <div class="co co-re">• Tendencia a incumplir normas y señales.<span class="en">· Tendency to disregard rules and signs.</span></div>
+      <div class="co co-re">• Alteraciones visuales (visión túnel), peor percepción de semáforos y luces.<span class="en">· Visual disturbances (tunnel vision); poorer perception of traffic lights and lights.</span></div>
+      <div class="co co-re">• Peor cálculo de distancias y velocidad.<span class="en">· Poorer distance and speed judgement.</span></div>
+      <div class="co co-re">• Mayor sensibilidad a deslumbramientos.<span class="en">· Increased sensitivity to glare.</span></div>
+      <div class="co co-re">• Favorece el sueño, la fatiga, las distracciones y aumenta el tiempo de reacción.<span class="en">· Promotes drowsiness, fatigue, distractions; increases reaction time.</span></div>
+    </div>
+    <div class="trap">
+      <div class="trap-lbl">⚠ Procedimiento de las pruebas de alcoholemia · Breathalyser procedure</div>
+      <p>Obligados a someterse: cualquier usuario implicado en un accidente como posible responsable · conductores con síntomas evidentes · infractores · cualquier conductor requerido en control preventivo.<span class="en">Who must submit: anyone involved in an accident as possible party · drivers with evident symptoms · those who have committed an offence · any driver stopped in a preventive check.</span></p>
+      <p style="margin-top:.4rem">Si el resultado es positivo → infracción muy grave. El agente puede someter al interesado a una <strong>segunda prueba</strong>, con un tiempo mínimo de <span class="hl">10 minutos</span> entre ambas. El agente puede inmovilizar el vehículo.<span class="en">Positive result → very serious offence. Agent may administer a second test, minimum 10 minutes between tests. Vehicle may be immobilised.</span></p>
+    </div>
+    <div class="co co-gy">Factores que afectan la alcoholemia: peso corporal · sexo (mujeres alcanzan tasas más altas a igual cantidad) · edad (jóvenes &lt;18 y mayores &gt;65 son más sensibles) · comidas (estómago vacío → alcohol pasa antes) · fatiga, estrés, falta de sueño.<span class="en">Factors affecting BAC: body weight · sex (women reach higher rates at equal amounts) · age (&lt;18 and &gt;65 most sensitive) · food (empty stomach → faster absorption) · fatigue, stress, lack of sleep.</span></div>
+    <div class="co co-am">El alcohol detecta a partir de los <span class="hl">5 minutos</span> de ingerido; alcanza su pico entre <span class="hl">30 y 90 minutos</span> después. La eliminación es lenta; son necesarias <strong>varias horas</strong>. Durante el sueño, el proceso de eliminación es más lento: puede quedar alcohol en sangre a la mañana siguiente.<span class="en">Alcohol detectable from 5 min; peak between 30–90 min. Elimination is slow — several hours. During sleep, elimination is even slower: positive readings possible next morning.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">5. Drogas y medicamentos <span class="sec-en">· Drugs &amp; medication</span></div>
+    <div class="co co-re">Las drogas están relacionadas con el <span class="hl">10%</span> de los accidentes más graves. La Ley prohíbe circular con presencia de drogas en el organismo (excepto bajo prescripción médica con finalidad terapéutica, si el conductor está en condiciones de conducir).<span class="en">Drugs linked to 10% of the most serious accidents. The Law prohibits driving with drugs in the body (except prescribed medication for therapeutic purposes if driver is fit to drive).</span></div>
+    <div class="co co-am">Pruebas de detección de drogas: preferentemente mediante <strong>prueba salival</strong>. Si positivo o presenta síntomas → facilitar saliva para análisis. El interesado puede solicitar prueba de contraste: <strong>análisis de sangre</strong>. La negativa a efectuar las pruebas → inmovilización inmediata del vehículo.<span class="en">Drug testing: primarily saliva test. If positive or symptoms shown → saliva sample for analysis. Can request a blood test as counter-test. Refusing → immediate vehicle immobilisation.</span></div>
+    <div class="card" style="margin-top:.5rem">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Medicamentos peligrosos · Dangerous medications</div>
+      <div class="co co-am"><strong>Antihistamínicos de 1ª generación:</strong> fuertes somnolencias y alteraciones psicomotoras. Sus efectos son similares a una tasa de alcoholemia de entre <span class="hl">0,5 y 0,8 g/l</span>. Los de 3ª generación no producen somnolencia pero presentan riesgo si se mezclan con alcohol.<span class="en">1st generation antihistamines: strong drowsiness and psychomotor impairment, similar to 0.5–0.8 g/l BAC. 3rd generation: no drowsiness but risky if mixed with alcohol.</span></div>
+      <div class="co co-am"><strong>Psicofármacos:</strong> mayor incidencia sobre la conducción — somnolencia, ralentización de reflejos, cansancio, visión borrosa, falta de coordinación.<span class="en">Psychoactive drugs: greatest impact on driving — drowsiness, slower reflexes, fatigue, blurred vision, poor coordination.</span></div>
+      <div class="co co-te">Recomendaciones: no automedicarse · respetar dosis · consultar el prospecto · no mezclar con alcohol · adoptar actitud responsable.<span class="en">Advice: no self-medication · follow dosage · read leaflet · don't mix with alcohol · be responsible.</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">6. Otros factores: estrés, temperatura, tabaco, cafeína <span class="sec-en">· Other factors</span></div>
+    <div class="co co-am"><strong>Estrés:</strong> reduce la capacidad de reacción · hace al conductor más agresivo y hostil · aumenta el riesgo asumido · tiende a no respetar las señales.<span class="en">Stress: reduces reaction capacity · makes driver more aggressive · increases risk-taking · tendency to disregard signals.</span></div>
+    <div class="co co-am"><strong>Calor extremo:</strong> 35 °C en el interior del vehículo → riesgo similar a conducir con una tasa de alcoholemia de <span class="hl">0,5 g/l</span>. El calor favorece la fatiga y el sueño, aumenta el tiempo de reacción y la agresividad.<span class="en">Extreme heat: 35°C inside vehicle → risk equivalent to 0.5 g/l BAC. Heat promotes fatigue, drowsiness, longer reaction time and aggression.</span></div>
+    <div class="co co-gy"><strong>Tabaco:</strong> provoca distracciones · favorece la fatiga y el sueño · irrita los ojos. Los conductores fumadores se implican en el <span class="hl">doble</span> de accidentes que los no fumadores, y evalúan las situaciones como menos peligrosas.<span class="en">Tobacco: causes distractions · promotes fatigue/drowsiness · irritates eyes. Smoker drivers involved in twice as many accidents as non-smokers; perceive situations as less dangerous.</span></div>
+    <div class="co co-te"><strong>Cafeína</strong> (café, té, refrescos de cola, energizantes): favorable para mantener la vigilia a corto plazo, pero puede producir un <span class="hl">efecto rebote</span> cuando sus efectos desaparecen.<span class="en">Caffeine (coffee, tea, cola, energy drinks): useful for maintaining alertness short-term, but can cause a rebound effect when it wears off.</span></div>
+    <div class="co co-am"><strong>Alergias:</strong> el 2% de los siniestros mortales puede estar relacionado con alergias. Evitar conducir en las primeras horas de la mañana y por lugares húmedos con alta concentración de polen. Síntomas más críticos en <strong>primavera y verano</strong>.<span class="en">Allergies: 2% of fatal accidents may be allergy-related. Avoid driving in early morning and humid high-pollen areas. Symptoms peak in spring and summer.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Vocabulario clave <span class="sec-en">· Key vocabulary</span></div>
+    <div class="vocab-grid">
+      <div class="vocab-item"><div class="vocab-es">campo visual</div><div class="vocab-en">field of vision</div></div>
+      <div class="vocab-item"><div class="vocab-es">efecto túnel</div><div class="vocab-en">tunnel vision effect</div></div>
+      <div class="vocab-item"><div class="vocab-es">tiempo de reacción</div><div class="vocab-en">reaction time</div></div>
+      <div class="vocab-item"><div class="vocab-es">distancia de reacción</div><div class="vocab-en">reaction distance</div></div>
+      <div class="vocab-item"><div class="vocab-es">distancia de frenado</div><div class="vocab-en">braking distance</div></div>
+      <div class="vocab-item"><div class="vocab-es">distancia de detención</div><div class="vocab-en">stopping distance (total)</div></div>
+      <div class="vocab-item"><div class="vocab-es">tasa de alcoholemia</div><div class="vocab-en">blood alcohol concentration (BAC)</div></div>
+      <div class="vocab-item"><div class="vocab-es">etilómetro</div><div class="vocab-en">breathalyser</div></div>
+      <div class="vocab-item"><div class="vocab-es">microsueño</div><div class="vocab-en">micro-sleep</div></div>
+      <div class="vocab-item"><div class="vocab-es">somnolencia</div><div class="vocab-en">drowsiness / sleepiness</div></div>
+      <div class="vocab-item"><div class="vocab-es">antihistamínico</div><div class="vocab-en">antihistamine</div></div>
+      <div class="vocab-item"><div class="vocab-es">psicofármaco</div><div class="vocab-en">psychoactive drug / psychiatric medication</div></div>
+    </div>
+  </div>
+</div>
+<!-- ═══════════════ END TEMA 16 ═══════════════ -->
+
+<!-- ═══════════════ TEMA 17 ═══════════════ -->
+<div class="tema-panel" id="tema17">
+  <div class="tema-hdr">
+    <span class="tema-num">TEMA 17</span>
+    <div>
+      <div class="tema-title">Conducción preventiva, condiciones adversas, accidentes y primeros auxilios</div>
+      <div class="tema-en">Preventive driving, adverse conditions, accidents &amp; first aid (PAS)</div>
+    </div>
+  </div>
+  <div class="intro-box">
+    <strong>¿Qué se examina aquí?</strong> Know the <strong>PAS protocol</strong> (Proteger–Avisar–Socorrer), the <strong>3 elements of preventive driving</strong> (visión, anticipación, gestión de espacio), look-ahead distances, following distances (2 s urban / 3 s interurban), aquaplaning causes/prevention, skid corrections, curve physics, and first aid specifics: PLS, RCP (30:2), tourniquet rule (amputation only), never plug natural orifice bleeds, antishock position. Also: when stopping is NOT obligatory at an accident.
+  </div>
+
+  <div class="section">
+    <div class="sec-title">1. Conducción preventiva <span class="sec-en">· Preventive / defensive driving</span></div>
+    <div class="co co-bl">Conjunto de técnicas para evitar cualquier peligro, independientemente de las acciones de los demás. Se basa en tres elementos: <strong>visión, anticipación y gestión del espacio</strong>.<span class="en">Techniques to avoid any danger, regardless of others' actions. Based on: vision, anticipation and space management.</span></div>
+    <div class="card">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Distancias de visión recomendadas · Recommended look-ahead distances</div>
+      <table class="tbl">
+        <thead><tr><th>Tipo de vía · Road type</th><th>Velocidad · Speed</th><th>Distancia de visión · Look-ahead distance</th></tr></thead>
+        <tbody>
+          <tr><td>Vías urbanas</td><td>40 km/h</td><td><span class="hl">220 m</span></td></tr>
+          <tr><td>Carreteras convencionales</td><td>80 km/h</td><td><span class="hl">440 m</span></td></tr>
+          <tr><td>Autopistas / autovías</td><td>120 km/h</td><td><span class="hl">660 m</span></td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:.78rem;color:var(--tx2);margin-top:.3rem">Objetivo: observar hasta donde se encontrará el vehículo a los 20 segundos. / Aim to observe as far as you will be in 20 seconds.</p>
+    </div>
+    <div class="card" style="margin-top:.5rem">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Gestión del espacio · Space management (following distances)</div>
+      <div class="co co-bl">Por delante: mínimo <span class="hl">2 segundos</span> en poblado, <span class="hl">3 segundos</span> fuera de poblado. En condiciones adversas: añadir al menos <span class="hl">1 segundo</span> más.<span class="en">Forward: 2 sec in town, 3 sec outside town. Adverse conditions: add at least 1 more second.</span></div>
+      <div class="co co-te">Cómo calcular: tomar un elemento fijo (poste, árbol); cuando el vehículo delantero lo pasa, contar <em>1101–1102–1103</em>. Si tu vehículo pasa el punto antes de terminar de contar, la distancia es insuficiente.<span class="en">How to calculate: pick a fixed point (post, tree); when the car ahead passes it, count 1101–1102–1103. If you pass it before finishing counting, you're too close.</span></div>
+      <div class="co co-am">En detenciones (semáforo, atasco, etc.): mantener al menos <span class="hl">2 o 3 metros</span> respecto al vehículo de delante.<span class="en">When stopped (traffic light, jam, etc.): maintain at least 2–3 metres from the vehicle ahead.</span></div>
+    </div>
+    <div class="co co-gy">4 principios de convivencia en circulación: No molestar · No sorprender · Advertir (señalizar maniobras con antelación) · Comprender (tolerancia con los errores ajenos).<span class="en">4 coexistence principles: Don't annoy · Don't surprise · Warn (signal manoeuvres in advance) · Understand (be tolerant of others' mistakes).</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">2. Derrape y curvas <span class="sec-en">· Skids &amp; cornering</span></div>
+    <div class="co co-am">Derrape / patinazo: pérdida total de adherencia → desplazamiento lateral involuntario. Causas: velocidad excesiva en curvas · virajes bruscos · frenada descontrolada · combinación volante-freno inadecuada · amortiguadores en mal estado · nieve, hielo, gravilla, barro.<span class="en">Skid: total loss of grip → involuntary lateral displacement. Causes: excessive speed in curves · harsh steering · uncontrolled braking · improper steering+braking combo · poor shock absorbers · snow, ice, gravel, mud.</span></div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Tipo de derrape · Skid type</th><th>Corrección · Correction</th></tr></thead>
+        <tbody>
+          <tr><td>Ruedas <strong>traseras</strong> derrapen</td><td>Girar el volante suavemente hacia el <strong>mismo lado</strong> que derrapa el vehículo.<span class="tbl-note">Steer gently toward the same side as the skid.</span></td></tr>
+          <tr><td>Ruedas <strong>delanteras</strong> derrapen</td><td>Girar el volante hacia el <strong>lado contrario</strong> al que derrapa el vehículo.<span class="tbl-note">Steer toward the opposite side to the skid.</span></td></tr>
+          <tr><td>Derrape por <strong>exceso de aceleración</strong></td><td>Levantar el pie del acelerador inmediatamente.<span class="tbl-note">Immediately lift foot off accelerator.</span></td></tr>
+          <tr><td>Derrape por <strong>frenada excesiva</strong></td><td>Levantar el pie del freno.<span class="tbl-note">Immediately lift foot off brake.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="co co-bl">En curvas: la fuerza centrífuga es proporcional a la masa y al <strong>cuadrado de la velocidad</strong> (si la velocidad se duplica, la fuerza centrífuga se multiplica por <span class="hl">4</span>), e inversamente proporcional al radio (curva más cerrada = mayor fuerza centrífuga).<span class="en">Centrifugal force is proportional to mass and the SQUARE of speed (double speed → 4× force), and inversely proportional to radius (tighter curve = more force).</span></div>
+    <div class="co co-te">Para tomar una curva correctamente: circular próximo al borde derecho · adaptar la velocidad al radio · acelerar progresivamente desde el inicio de la curva · NO frenar ni pisar el embrague dentro de la curva.<span class="en">To corner correctly: stay near the right edge · adapt speed to radius · accelerate progressively from curve entry · do NOT brake or press clutch inside the curve.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">3. Condiciones adversas <span class="sec-en">· Adverse weather conditions</span></div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Condición · Condition</th><th>Precauciones clave · Key precautions</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Lluvia · Rain</strong></td>
+            <td>Circular con luces · accionar limpiaparabrisas · frenar con suavidad y antelación (distancia de frenado en mojado ≈ <span class="hl">doble</span> que en seco) · reducir velocidad · aumentar distancia de seguridad.<span class="tbl-note">Lights on · use wipers · brake gently and early (wet braking distance ≈ double dry) · reduce speed · increase following distance.</span></td>
+          </tr>
+          <tr>
+            <td><strong>Aquaplaning</strong></td>
+            <td>Causas: velocidad excesiva · neumáticos desgastados · charcos. Solución: neumáticos en perfecto estado y presión correcta · velocidad moderada. Si ocurre: el vehículo pierde el contacto real con el pavimento; soltar el acelerador gradualmente; no frenar bruscamente.<span class="tbl-note">Causes: excessive speed · worn tyres · puddles. Prevention: good tyres + correct pressure + moderate speed. If occurs: vehicle loses real contact with road; ease off accelerator; don't brake sharply.</span></td>
+          </tr>
+          <tr>
+            <td><strong>Nieve · Snow</strong></td>
+            <td>Mantener frenos y neumáticos en buen estado · aumentar distancia de seguridad · conducir con suavidad · velocidad moderada · marcha alta posible · subir pendientes a velocidad sostenida · bajar en marcha corta (retención del motor) · circular sobre huellas de otros vehículos (salvo capa fina → circular donde no haya huellas).<span class="tbl-note">Good brakes/tyres · bigger following distance · smooth driving · moderate speed · use high gear when possible · ascend at steady speed · descend in low gear (engine braking) · follow others' tracks (unless thin layer → drive on fresh snow).</span></td>
+          </tr>
+          <tr>
+            <td><strong>Hielo · Ice</strong></td>
+            <td>La adherencia es prácticamente nula → distancia de frenado puede multiplicarse por <span class="hl">10</span>. Mismas recomendaciones que la nieve. Prever hielo: temperaturas próximas a 0°, zonas sombrías y húmedas (bajo puentes, pasos subterráneos), vehículos que llevan cadenas en sentido contrario.<span class="tbl-note">Grip near zero → braking distance up to 10× longer. Same advice as snow. Anticipate ice: near 0°, shaded/damp areas (bridges, underpasses), oncoming vehicles with chains.</span></td>
+          </tr>
+          <tr>
+            <td><strong>Niebla · Fog</strong></td>
+            <td>Al menos luces de corto alcance o antiniebla delanteras · si niebla densa, también <strong>antiniebla traseras</strong> · adaptar velocidad a la visibilidad · aumentar distancia frontal · evitar adelantamientos · atención a marcas viales y balizamiento.<span class="tbl-note">At least dipped/front foglights · if dense fog, also rear foglights · adapt speed to visibility · increase following distance · avoid overtaking · follow road markings and delineators.</span></td>
+          </tr>
+          <tr>
+            <td><strong>Viento lateral · Crosswind</strong></td>
+            <td>Reducir velocidad · girar el volante en sentido contrario al viento. Más afectados: vehículos de dos ruedas y los que arrastran remolques. Al adelantar un vehículo grande, cuando se rebasa su "pantalla" el viento aparece bruscamente → peligro de desplazamiento hacia el vehículo adelantado.<span class="tbl-note">Reduce speed · steer into wind. Most affected: 2-wheelers and vehicles towing trailers. When overtaking a large vehicle: wind returns suddenly when you pass their windbreak → risk of being pushed toward them.</span></td>
+          </tr>
+          <tr>
+            <td><strong>Deslumbramiento solar · Sun glare</strong></td>
+            <td>Parabrisas limpio sin rayaduras · usar parasol o gafas de sol · moderar velocidad o detener el vehículo si es necesario.<span class="tbl-note">Clean, scratch-free windscreen · use sun visor or sunglasses · slow down or stop if needed.</span></td>
+          </tr>
+          <tr>
+            <td><strong>Deslumbramiento nocturno · Night dazzle</strong></td>
+            <td>Mirar hacia el borde derecho de la calzada · reducir velocidad · nunca usar luz larga para "devolver" el deslumbramiento. Al tomar curva hacia la derecha: cambiar a corta antes que el que va hacia la izquierda.<span class="tbl-note">Look toward right edge · slow down · NEVER flash high beams to retaliate. When curving right: switch to dipped sooner than when curving left.</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="co co-am">Cadenas y dispositivos antideslizantes: colocar en las <strong>ruedas motrices</strong> (como mínimo). Los sprays antideslizantes duran poco y no pueden sustituir a las cadenas o neumáticos de invierno con clavos.<span class="en">Chains and anti-skid devices: fit on drive wheels (at minimum). Anti-skid sprays are short-lived and cannot replace chains or winter tyres with studs.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">4. Accidentes de tráfico: estadísticas y grupos de riesgo <span class="sec-en">· Traffic accidents: statistics &amp; risk groups</span></div>
+    <div class="co co-bl">El factor humano es responsable del <span class="hl">70–90%</span> de los accidentes. El factor vía/entorno del 10–35%. El factor vehículo del 4–13%. La velocidad inadecuada es uno de los factores de mayor incidencia.<span class="en">Human factor: 70–90% of accidents. Road/environment factor: 10–35%. Vehicle factor: 4–13%. Inappropriate speed is one of the biggest factors.</span></div>
+    <div class="co co-am">Los accidentes mortales se producen más en <strong>vías interurbanas</strong>, en tramos rectos más que en curvas. Las autopistas/autovías son más seguras. Mayor frecuencia: periodos vacacionales (semana santa, verano, diciembre), fines de semana y días festivos, y horas de salida del trabajo (especialmente por la tarde).<span class="en">Fatal accidents: mostly on interurban roads, on straight sections more than curves. Motorways are safer. Most frequent: holiday periods (Easter, summer, December), weekends, post-work hours (especially afternoon).</span></div>
+    <div class="card" style="margin-top:.5rem">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Grupos de riesgo · Risk groups</div>
+      <table class="tbl">
+        <thead><tr><th>Grupo · Group</th><th>Características clave · Key features</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Jóvenes (15–29 años)</strong></td><td>Principal causa de muerte en España en ese tramo de edad. El ~40% de las minusvalías juveniles están asociadas a accidentes. Factores: velocidad, alcohol/drogas, falta de experiencia, autoafirmación, conducta exhibicionista. Mayor riesgo: fines de semana, noche/madrugada, verano.<span class="tbl-note">Leading cause of death aged 15–29 in Spain. ~40% of youth disabilities from accidents. Factors: speed, alcohol/drugs, inexperience, self-assertion, exhibitionism. Peak: weekends, night/early morning, summer.</span></td></tr>
+          <tr><td><strong>Personas mayores</strong></td><td>~24% mueren como conductores. Deterioro psicofísico: visión, audición, capacidad psicomotora, medicamentos, menor tolerancia al estrés. Mayor accidentalidad en incorporaciones, salidas y cruces complejos. ~36% mueren como <strong>peatones</strong>.<span class="tbl-note">~24% die as drivers. Psychophysical decline: vision, hearing, psychomotor ability, medications, less stress tolerance. Most accidents at complex merges, exits and junctions. ~36% die as pedestrians.</span></td></tr>
+          <tr><td><strong>Peatones</strong></td><td>El atropello es el tipo de accidente que más víctimas produce en poblado. El 70% de los peatones atropellados han cometido alguna infracción. A &gt;50 km/h en poblado, casi todos los atropellos son mortales.<span class="tbl-note">Pedestrian knockdown is the deadliest urban accident type. 70% of those knocked down had committed an infraction. At &gt;50 km/h in urban areas, almost all knockdowns are fatal.</span></td></tr>
+          <tr><td><strong>Niños</strong></td><td>Limitaciones: campo visual reducido (hasta 40% menos que adultos entre coches aparcados) · no desarrollan la detección auditiva hasta los 7 años · confunden ver con ser vistos. Estadísticamente: atropellos en viernes, febrero/marzo, tarde, calzada &gt;3 m.<span class="tbl-note">Limitations: smaller visual field (up to 40% less between parked cars) · don't develop auditory detection until age 7 · confuse seeing with being seen. Stats: knockdowns on Fridays, Feb/March, afternoon, road &gt;3 m wide.</span></td></tr>
+          <tr><td><strong>Ciclistas</strong></td><td>Mayor accidentalidad en fines de semana/buen tiempo, carreteras convencionales, rectas e intersecciones. Tipo: choque con otro vehículo (colisión frontal, alcance, lateral).<span class="tbl-note">Peak: weekends/good weather, conventional roads, straights and junctions. Type: crash with another vehicle (head-on, rear-end, side).</span></td></tr>
+          <tr><td><strong>Motociclistas / ciclomotoristas</strong></td><td>8% de vehículos implicados en accidentes. 1 de cada 6 muertos y 1 de cada 4 heridos. 67% de los accidentes son colisiones entre dos vehículos. Accidentes mortales asociados a la falta de uso del casco.<span class="tbl-note">8% of vehicles in accidents. 1 in 6 deaths and 1 in 4 injured travel on motorcycles/mopeds. 67% of accidents are two-vehicle collisions. Fatal accidents mainly linked to helmet non-use.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="co co-am">Impacto de la velocidad: 50 km/h vs indeformable = caída desde 3 plantas · 80 km/h = 7 plantas · 120 km/h = 16 plantas.<span class="en">Speed impact: 50 km/h vs immovable = falling from 3 floors · 80 km/h = 7 floors · 120 km/h = 16 floors.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">5. Protocolo de actuación en accidente: PAS <span class="sec-en">· Accident protocol: PAS</span></div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Letra · Letter</th><th>Acción · Action</th><th>Detalle · Detail</th></tr></thead>
+        <tbody>
+          <tr>
+            <td style="font-size:1.3rem;font-weight:700;color:var(--re)">P</td>
+            <td><strong>PROTEGER</strong></td>
+            <td>Evitar nuevos accidentes y agravar los daños. Autoprotección + protección del lugar + protección de los heridos. Estacionar el propio vehículo en lugar seguro · Encender alumbrado de posición y de emergencia · Identificar peligros (incendio, gasolina derramada).<span class="tbl-note">Prevent new accidents and worsening damage. Self-protection + site protection + casualty protection. Park safely · lights on · identify hazards.</span></td>
+          </tr>
+          <tr>
+            <td style="font-size:1.3rem;font-weight:700;color:var(--am)">A</td>
+            <td><strong>AVISAR</strong></td>
+            <td>Llamar al <span class="hl">112</span> (gratuito, europeo, accesible desde cualquier teléfono fijo o móvil incluso sin PIN ni cobertura de operadora). Servicio integral que coordina todos los efectivos necesarios.<span class="tbl-note">Call 112 (free, European, accessible from any phone — even without PIN or network coverage). Integral service coordinating all necessary emergency services.</span></td>
+          </tr>
+          <tr>
+            <td style="font-size:1.3rem;font-weight:700;color:var(--te)">S</td>
+            <td><strong>SOCORRER</strong></td>
+            <td>Valoración inicial del herido: <strong>consciencia → respiración → circulación</strong>.<span class="tbl-note">Initial assessment of casualty: consciousness → breathing → circulation.</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="co co-am">El no auxiliar a las víctimas constituye el <strong>delito de omisión del deber de socorro</strong>, penado con penas de prisión en España.<span class="en">"Omission of duty to rescue" is a criminal offence in Spain, punishable by imprisonment.</span></div>
+    <div class="trap">
+      <div class="trap-lbl">⚠ Cuándo NO es obligatorio detenerse · When stopping is NOT obligatory</div>
+      <p>Cuando no sea necesaria nuestra colaboración (continuar para no obstaculizar el auxilio) · Cuando ya se haya personado la Autoridad o sus agentes (seguir sus indicaciones).<span class="en">When your help is not needed (continue to avoid obstructing rescue) · When authority/officers are already present (follow their instructions).</span></p>
+    </div>
+    <div class="co co-te">Es obligatorio avisar a la autoridad cuando: aparentemente haya resultado herida o muerta alguna persona · cuando alguna de las personas implicadas lo solicite.<span class="en">Must notify authorities when: someone appears to be injured or dead · when any involved person requests it.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">6. Valoración del herido y primeros auxilios <span class="sec-en">· Casualty assessment &amp; first aid</span></div>
+    <div class="card">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Valoración inicial · Initial assessment (Consciencia → Respiración → Circulación)</div>
+      <div class="pchain">
+        <div class="prow">
+          <div class="pnum" style="background:var(--ac2);color:var(--ac)">1</div>
+          <div class="pcon"><div class="pname">Consciencia · Consciousness</div><div class="pdesc">Hablar al herido ("¿cómo se llama?") + pellizcar el dorso de la mano o la mejilla. Cualquier reacción = consciente, respira y tiene circulación → dejar en posición y vigilar. / Talk to casualty + pinch back of hand or cheek. Any response = conscious, breathing, circulating → leave in position, monitor.</div></div>
+        </div>
+        <div class="prow">
+          <div class="pnum" style="background:var(--ac2);color:var(--ac)">2</div>
+          <div class="pcon"><div class="pname">Respiración · Breathing</div><div class="pdesc">Si inconsciente: realizar la maniobra <strong>frente-mentón</strong> (impide que la lengua caiga hacia atrás). Buscar indicios: movimientos torácicos · aire espirado en la cara · sonido de entrada/salida de aire. / Unconscious: head-tilt chin-lift manoeuvre. Look for: chest movement · feel exhaled air · hear breathing.</div></div>
+        </div>
+        <div class="prow">
+          <div class="pnum" style="background:var(--ac2);color:var(--ac)">3</div>
+          <div class="pcon"><div class="pname">Circulación · Circulation</div><div class="pdesc">Tos, movimiento corporal o respiración normal = hay circulación. Si inconsciente y no respira: iniciar RCP. / Coughing, body movement or normal breathing = circulation present. If unconscious and not breathing: start CPR.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:.5rem">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Posiciones del herido · Casualty positions</div>
+      <div class="co co-te"><strong>Inconsciente y respira:</strong> dejar en posición en que se encuentra y controlar. Colocar en <strong>Posición Lateral de Seguridad (PLS)</strong> solo si: vomita o sangra por la boca · el auxiliador debe abandonarle temporalmente. La PLS sitúa la cabeza de lado y la boca más baja para que la sangre o el vómito salgan al exterior.<span class="en">Unconscious and breathing: leave as found and monitor. Move to Recovery Position (PLS) only if: vomiting/bleeding from mouth · rescuer must leave temporarily. PLS: head to one side, mouth lower, so fluids drain out.</span></div>
+      <div class="co co-re"><strong>Inconsciente y NO respira:</strong> iniciar RCP básica: <span class="hl">30 compresiones torácicas + 2 insuflaciones</span> (respiración boca a boca). Repetir en ciclos.<span class="en">Unconscious and NOT breathing: start basic CPR: 30 chest compressions + 2 rescue breaths. Repeat in cycles.</span></div>
+      <div class="co co-am"><strong>Shock (colapso):</strong> síntomas: palidez, sudoración fría, inquietud, confusión, pulso rápido y débil, respiración rápida y superficial. Actuación: pedir ayuda urgente · colocar en <strong>posición antishock</strong> (cabeza más baja que el resto del cuerpo) o PLS · aflojar la ropa.<span class="en">Shock: symptoms: pallor, cold sweat, restlessness, confusion, rapid weak pulse, rapid shallow breathing. Action: call urgent help · antishock position (head lower than body) or PLS · loosen clothing.</span></div>
+    </div>
+
+    <div class="card" style="margin-top:.5rem">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Hemorragias · Bleeding</div>
+      <div class="co co-te">Hemorragia externa: 1) Taponar (presión directa con gasa/prenda limpia, <strong>no retirar aunque se manche</strong>) · 2) Elevar el miembro · 3) Presión en la arteria (humeral en brazo, femoral en pierna, carótida en cuello) · 4) Torniquete (solo en caso de amputación).<span class="en">External bleeding: 1) Apply direct pressure (gauze/clean cloth, do NOT remove if soaked) · 2) Elevate the limb · 3) Arterial pressure (humeral arm, femoral leg, carotid neck) · 4) Tourniquet (ONLY in amputation).</span></div>
+      <div class="trap">
+        <div class="trap-lbl">⚠ Hemorragia por orificios naturales · Bleeding from natural orifices</div>
+        <p>Las hemorragias por el oído o la nariz <span class="hl-re">NO se taponan nunca</span>. Cubrir sin presionar con una gasa o apósito limpio. Colocar al herido sobre el oído/nariz que sangra con la cabeza de lado para favorecer la salida de la sangre.<span class="en">Bleeding from ear or nose: NEVER plug. Cover gently (no pressure) with clean gauze. Position casualty on the bleeding side with head turned to allow drainage.</span></p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:.5rem">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Otras lesiones · Other injuries</div>
+      <div class="co co-gy"><strong>Fracturas:</strong> indicios: dolor intenso, incapacidad de mover la zona, edemas, hematomas, deformidad, hipersensibilidad, chasquido. Actuación: tapar herida y cohibir hemorragia (fracturas abiertas) · inmovilizar la fractura (cabestrillo u otro medio).<span class="en">Fractures: signs: intense pain, inability to move, swelling, bruising, deformity, tenderness, cracking sound. Action: cover wound, control bleeding (open fractures) · immobilise fracture (sling or other means).</span></div>
+      <div class="co co-re"><strong>Lesión medular:</strong> sospechar si: inconsciente con golpes en cuello/cabeza · conductor/pasajero de motocicleta · refiere no sentir o no poder mover alguna parte del cuerpo. <span class="hl-re">NO mover, sentar ni inclinar al herido</span>. Si fuera necesario movertarle, inmovilizar la cabeza y la región cervical.<span class="en">Spinal injury: suspect if: unconscious with head/neck trauma · motorcycle rider/passenger · reports numbness/inability to move body part. DO NOT move, sit or tilt the casualty. If must move: immobilise head and neck.</span></div>
+      <div class="co co-gy"><strong>Quemaduras:</strong> extinguir la ropa con una manta. Refrigerar con agua fría. <span class="hl-re">No retirar la ropa adherida a la piel · no pinchar ampollas · no aplicar pomadas.</span> Cubrir con apósitos húmedos. No vendar juntas dos superficies quemadas.<span class="en">Burns: smother clothing flames with a blanket. Cool with cold water. Do NOT remove clothing stuck to skin · do NOT pop blisters · do NOT apply ointments. Cover with damp dressings. Never bandage two burned surfaces together.</span></div>
+      <div class="co co-am"><strong>Heridas:</strong> limpiar con abundante agua (de dentro hacia afuera) · retirar cuerpos extraños si no ofrecen dificultad · tapar con apósitos estériles (no usar algodón — se adhiere). Herida grave con objeto incrustado: <span class="hl-re">no retirar el objeto</span> · tapar con el objeto e inmovilizar en bloque.<span class="en">Wounds: wash with plenty of water (inside out) · remove foreign bodies if easily done · cover with sterile dressings (not cotton — it sticks). Serious wound with embedded object: do NOT remove object · cover with object in place and immobilise as a unit.</span></div>
+    </div>
+
+    <div class="co co-bl">Normas generales para todo accidentado: no moverlo ni trasladarlo · taparlo ligeramente · no darle líquidos, alimentos ni medicamentos · aflojar la ropa que oprime. El transporte de heridos: siempre en ambulancia/vehículo especializado si es posible. La movilización es absolutamente excepcional.<span class="en">General rules for all casualties: don't move or transport them · keep lightly covered · no liquids, food or medication · loosen constricting clothing. Transport: always by ambulance/specialist vehicle if possible. Moving casualties should be an absolute last resort.</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">7. Seguridad pasiva — cinturones, airbag, asiento y niños <span class="sec-en">· Passive safety — seatbelts, airbag, seat &amp; children</span></div>
+    <div class="co co-bl">La seguridad pasiva reduce al mínimo las lesiones de los ocupantes una vez producido el accidente. Componentes: carrocería (deformación programada) · asientos · reposacabezas · cinturones · airbag.<span class="en">Passive safety minimises occupant injuries once an accident has occurred. Components: body (programmed deformation) · seats · headrests · seatbelts · airbags.</span></div>
+
+    <div class="card">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Asiento y reposacabezas · Seat &amp; headrest</div>
+      <div class="co co-te">Asiento bien reglado: ver la vía por encima del volante · llegar al volante con brazos semiflexionados · accionar pedales con piernas semiflexionadas. No colocar cojines/esterillas (reduce la eficacia del cinturón → favorece el efecto submarino).<span class="en">Well-adjusted seat: see road over steering wheel · reach wheel with slightly bent arms · work pedals with slightly bent legs. No cushions/mats (reduces seatbelt effectiveness → promotes submarine effect).</span></div>
+      <div class="co co-te">Reposacabezas: borde superior a la altura de la <strong>parte superior de la cabeza</strong> (centro a la altura de los ojos). Distancia máxima entre reposacabezas y cabeza: <span class="hl">4 cm</span>. Su función: retener la cabeza en el latigazo cervical (colisión por alcance).<span class="en">Headrest: top edge level with top of head (centre at eye level). Maximum gap between headrest and head: 4 cm. Purpose: retain head during whiplash (rear-end collision).</span></div>
+    </div>
+
+    <div class="card" style="margin-top:.5rem">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Cinturón de seguridad · Seatbelt</div>
+      <div class="co co-re">Sin cinturón: la probabilidad de morir en caso de accidente es el <span class="hl">doble</span>. Si el airbag se acciona sin cinturón → lesiones importantes. En impacto frontal, pasajero trasero sin cinturón puede golpear mortalmente a los delanteros (hasta <span class="hl">8 veces</span> más probable).<span class="en">Without seatbelt: double the probability of death. If airbag activates without seatbelt → serious injuries. Rear passenger without seatbelt can fatally strike front passengers (up to 8× more likely).</span></div>
+      <div class="co co-te">Colocación correcta: banda torácica sobre la clavícula (sin rozar el cuello), por el centro del pecho. Banda abdominal sobre los <strong>huesos de la cadera (pelvis)</strong>, por debajo del abdomen. Prohibidas las pinzas o reguladores de presión.<span class="en">Correct placement: chest band over collarbone (not touching neck), down centre of chest. Abdominal band over hip bones (pelvis), below abdomen. Pressure clips/regulators prohibited.</span></div>
+      <div class="co co-am">Efecto submarino: el cuerpo se desliza por debajo de la banda abdominal al no llevar el cinturón correctamente o al usar cojines/esterillas.<span class="en">Submarine effect: body slides under the abdominal band when seatbelt is incorrectly worn or cushions are used.</span></div>
+      <div class="co co-gy">Exentos del cinturón: conductor en marcha atrás/estacionamiento · persona con certificado médico de exención · conductores y pasajeros de vehículos de urgencia · taxis en servicio · distribuidores en operaciones de carga/descarga sucesivas · persona a cargo de mandos adicionales en proceso de aprendizaje.<span class="en">Exempt from seatbelt: driver reversing/parking · person with medical exemption · emergency service drivers/passengers · taxis on duty · delivery workers on loading rounds · person controlling additional controls during driving lessons.</span></div>
+    </div>
+
+    <div class="card" style="margin-top:.5rem">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Airbag</div>
+      <div class="co co-bl">Bolsa de gas que se infla en milésimas de segundo al producirse un impacto. Complementa el cinturón (no lo sustituye). Distancia mínima conductor-volante: <span class="hl">10 cm</span> (ideal: <span class="hl">25 cm</span>). Junto con el cinturón, puede reducir en un <span class="hl">20%</span> la probabilidad de lesiones mortales.<span class="en">Gas bag inflating in milliseconds on impact. Complements the seatbelt (doesn't replace it). Minimum driver-wheel distance: 10 cm (ideal: 25 cm). With seatbelt: can reduce fatal injury probability by 20%.</span></div>
+      <div class="co co-re">Sistema de retención infantil orientado hacia atrás en asiento delantero solo si el <strong>airbag frontal está desactivado</strong>.<span class="en">Rear-facing child seat in front passenger seat ONLY if the front airbag has been deactivated.</span></div>
+    </div>
+
+    <div class="card" style="margin-top:.5rem">
+      <div style="font-weight:600;font-size:.85rem;margin-bottom:.45rem">Niños y sistemas de retención infantil · Children &amp; child restraint systems</div>
+      <div class="co co-bl">Menores de edad con estatura <span class="hl">≤1,35 m</span> en vehículos de hasta 9 plazas: obligatorio sistema de retención infantil homologado adaptado a su talla y peso. Deben situarse en los <strong>asientos traseros</strong>.<span class="en">Children ≤1.35 m tall in vehicles of up to 9 seats: approved child restraint required. Must use rear seats.</span></div>
+      <div class="co co-am">Excepciones (pueden ir en asiento delantero): vehículo sin asientos traseros · todos los traseros ocupados por menores · imposible instalar todos los sistemas en los traseros.<span class="en">Exceptions (may use front seat): no rear seats · all rear seats occupied by children · can't fit all child seats in rear.</span></div>
+      <div class="co co-te">Posición más segura: asiento trasero <strong>central</strong> (menos expuesto a impactos laterales y deformaciones de carrocería).<span class="en">Safest position: central rear seat (least exposed to lateral impacts and body deformation).</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Vocabulario clave <span class="sec-en">· Key vocabulary</span></div>
+    <div class="vocab-grid">
+      <div class="vocab-item"><div class="vocab-es">conducción preventiva</div><div class="vocab-en">defensive / preventive driving</div></div>
+      <div class="vocab-item"><div class="vocab-es">zona de incertidumbre</div><div class="vocab-en">zone of uncertainty (space around road users)</div></div>
+      <div class="vocab-item"><div class="vocab-es">aquaplaning</div><div class="vocab-en">aquaplaning / hydroplaning</div></div>
+      <div class="vocab-item"><div class="vocab-es">derrape / patinazo</div><div class="vocab-en">skid / slide</div></div>
+      <div class="vocab-item"><div class="vocab-es">fuerza centrífuga</div><div class="vocab-en">centrifugal force</div></div>
+      <div class="vocab-item"><div class="vocab-es">PAS</div><div class="vocab-en">Proteger–Avisar–Socorrer (accident protocol)</div></div>
+      <div class="vocab-item"><div class="vocab-es">maniobra frente-mentón</div><div class="vocab-en">head-tilt chin-lift manoeuvre</div></div>
+      <div class="vocab-item"><div class="vocab-es">PLS (posición lateral de seguridad)</div><div class="vocab-en">Recovery Position</div></div>
+      <div class="vocab-item"><div class="vocab-es">RCP (reanimación cardiopulmonar)</div><div class="vocab-en">CPR (cardiopulmonary resuscitation)</div></div>
+      <div class="vocab-item"><div class="vocab-es">torniquete</div><div class="vocab-en">tourniquet</div></div>
+      <div class="vocab-item"><div class="vocab-es">posición antishock</div><div class="vocab-en">antishock position (head lower than body)</div></div>
+      <div class="vocab-item"><div class="vocab-es">latigazo cervical</div><div class="vocab-en">whiplash</div></div>
+    </div>
+  </div>
+</div>
+<!-- ═══════════════ END TEMA 17 ═══════════════ -->
+
+</div>
+
 <script>
 function showTema(n) {
   document.querySelectorAll('.tema-panel').forEach(p => p.classList.remove('active'));
